@@ -3,7 +3,10 @@ import { Montserrat } from 'next/font/google';
 import './globals.css';
 import classNames from 'classnames';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
   title: 'BALSTIL',
