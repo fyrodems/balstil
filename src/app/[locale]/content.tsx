@@ -1,15 +1,13 @@
-"use client";
+'use client';
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from 'next-intl';
 
-export const Content = () => {
-  const t = useTranslations("homepage");
+export const Content: React.FC = () => {
+  const t = useTranslations('homepage');
 
   return (
-    <>
-      <main>
-        <p className="text-base sm:text-xl lg:text-2xl">{t("test")}</p>
-      </main>
-    </>
+    <main>
+      <p className="text-base sm:text-xl lg:text-2xl">{t('test')}</p>
+    </main>
   );
 };
