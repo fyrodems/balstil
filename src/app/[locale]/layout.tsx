@@ -1,19 +1,26 @@
-import "normalize.css/normalize.css";
-import { Exo_2 } from "next/font/google";
-import { NextIntlClientProvider, useLocale } from "next-intl";
-import { getTranslations } from "next-intl/server";
-import { notFound } from "next/navigation";
-import "../globals.css";
+import { NextIntlClientProvider, useLocale } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import { Montserrat } from 'next/font/google';
+import classNames from 'classnames';
+import 'normalize.css/normalize.css';
+import '../globals.css';
+// import type { Metadata } from 'next';
 
-const exo = Exo_2({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ['latin'] });
+
+// export const metadata: Metadata = {
+//   title: 'BALSTIL',
+//   description: 'Kominki najwyższej jakości',
+// };
 
 export async function generateMetadata() {
-  const t = await getTranslations("metaData.homepage");
+  const t = await getTranslations('metaData.homepage');
 
   return {
-    title: t("title"),
-    description: t("description"),
-    icons: { icon: "/icon.png" },
+    title: t('title'),
+    description: t('description'),
+    icons: { icon: '/icon.png' },
   };
 }
 
@@ -32,7 +39,15 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={exo.className}>
+      <body
+        className={classNames(
+          montserrat.className,
+          'bg-light-bg container mx-auto p4'
+
+          /* text-slate-100 - color
+           */
+        )}
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
