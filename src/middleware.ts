@@ -1,73 +1,16 @@
-import createIntlMiddleware from "next-intl/middleware";
-import { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import createMiddleware from 'next-intl/middleware';
 
-export default async function middleware(request: NextRequest) {
-  const locales = ["pl", "en"];
-  const defaultLocale = "pl";
-  const pathnames = {
-    "/": "/",
-    "/forgot-password": {
-      en: "/forgot-password",
-      pl: "/zapomniales-haslo",
-    },
-    "/login": {
-      en: "/login",
-      pl: "/logowanie",
-    },
-    "/registration": {
-      en: "/registration",
-      pl: "/rejestracja",
-    },
-    "/reset-password": {
-      en: "/reset-password",
-      pl: "/resetuj-haslo",
-    },
-    "/cart": {
-      en: "/cart",
-      pl: "/koszyk",
-    },
-    "/search": {
-      en: "/search",
-      pl: "/wyszukaj",
-    },
-    "/favourites": {
-      en: "/favourites",
-      pl: "/ulubione",
-    },
-    "/account/settings": {
-      en: "/account/settings",
-      pl: "/konto/ustawienia",
-    },
-    "/account/edit-profile": {
-      en: "/account/edit-profile",
-      pl: "/konto/edytuj-profil",
-    },
-    "/account/edit-profile/my-addresses": {
-      en: "/account/edit-profile/my-addresses",
-      pl: "/konto/edytuj-profil/moje-adresy",
-    },
-  };
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales: ['en', 'pl'],
+  localePrefix: 'always',
 
-  const pathname = request.nextUrl.pathname;
-  console.log(pathname);
-  // HANDLING ADMIN PANEL ROUTES
-  if (pathname.startsWith("/admin/")) {
-    // admin should be authorized and redirrected to login page if was not
-    return NextResponse.next();
-  }
-
-  // HANDLING LOCALIZED ROUTES
-  const handleI18nRouting = createIntlMiddleware({
-    locales,
-    defaultLocale,
-    pathnames,
-  });
-  const response = handleI18nRouting(request);
-
-  return response;
-}
+  // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
+  defaultLocale: 'pl',
+});
 
 export const config = {
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  // Skip all paths that should not be internationalized. This example skips the
+  // folders "api", "_next" and all files with an extension (e.g. favicon.ico)
+  matcher: ['/', '/(pl|en)/:path*'],
 };
