@@ -5,14 +5,8 @@ import { Montserrat } from 'next/font/google';
 import classNames from 'classnames';
 import 'normalize.css/normalize.css';
 import '../globals.css';
-// import type { Metadata } from 'next';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
-
-// export const metadata: Metadata = {
-//   title: 'BALSTIL',
-//   description: 'Kominki najwyższej jakości',
-// };
 
 export async function generateMetadata() {
   const t = await getTranslations('metaData.homepage');
@@ -20,7 +14,8 @@ export async function generateMetadata() {
   return {
     title: t('title'),
     description: t('description'),
-    icons: { icon: '/favicon.ico' },
+    // icons: { icon: '/favicon.ico' },
+    // icons: { icon: '/icon.png' },
   };
 }
 
