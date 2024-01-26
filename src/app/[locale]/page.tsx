@@ -14,7 +14,7 @@ export async function generateMetadata() {
 export default async function Homepage() {
   return (
     <>
-      <Content />;
+      <Content />
       <LanguageSelector />
     </>
   );

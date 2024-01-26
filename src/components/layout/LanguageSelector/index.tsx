@@ -2,14 +2,9 @@
 
 import { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
-// import Link from "next-intl/link";
 import { useLocale } from 'next-intl';
-// import { usePathname } from "next-intl/client";
 import styles from './languageSelector.module.scss';
-import { createSharedPathnamesNavigation } from 'next-intl/navigation';
-const locales = ['en', 'pl'] as const;
-const { Link, useRouter, usePathname, redirect } =
-  createSharedPathnamesNavigation({ locales });
+import { Link, usePathname } from '@/navigation';
 
 export const LanguageSelector = () => {
   const locale = useLocale();
