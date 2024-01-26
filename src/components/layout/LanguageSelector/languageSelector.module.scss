@@ -1,46 +1,15 @@
-// @use "../../../styles/themes.scss" as themes;
-// @use "../../../styles/dropdown.scss" as dropdown;
+@use '@/app/styles/dropdown.scss' as dropdown;
+@use '@/app/styles/themes.scss' as themes;
 
 .dropdown {
-  // @include dropdown.dropdown;
+  @include dropdown.dropdown;
   background-color: transparent;
   border: none;
   position: absolute;
-  right: 60px;
-  top: 10px;
   transform: translateY(-50%);
-  // color: themes.$white;
-  cursor: pointer;
-  text-decoration: none;
-
-  &::after {
-    content: '';
-    display: block;
-    margin: auto;
-    width: 0;
-    height: 2px;
-    background: transparent;
-    transition: all 0.3s;
-  }
-
-  &:hover::after {
-    -webkit-text-stroke: 1px;
-    width: 100%;
-    // background: themes.$white;
-  }
-
-  &::before {
-    content: '‹';
-    border: none;
-    transform: rotate(270deg);
-    font-size: 35px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto 15px;
-    padding: 0 15px;
-    cursor: pointer;
-  }
+  color: black;
+  // right: -35px;
+  // top: 50%;
 
   // @include themes.medium {
   //   top: 28px;

@@ -5,6 +5,7 @@ import { Montserrat } from 'next/font/google';
 import classNames from 'classnames';
 import 'normalize.css/normalize.css';
 import '../globals.css';
+import { Footer } from '@/components/layout/Footer';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -37,13 +38,15 @@ export default async function RootLayout({ children }: Props) {
       <body
         className={classNames(
           montserrat.className,
-          'bg-light-bg container mx-auto p4'
+          'bg-light-bg'
+          // 'container mx-auto p4'
           /* text-slate-100 - color */
         )}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Footer />
       </body>
     </html>
   );

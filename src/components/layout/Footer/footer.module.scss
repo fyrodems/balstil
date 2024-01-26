@@ -1,0 +1,49 @@
+@use '@/app/styles/themes.scss' as themes;
+
+.footerWrapper {
+  position: relative;
+  background-color: themes.$footerBg;
+  color: themes.$white;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 40px 60px 10px 60px;
+  overflow: hidden;
+
+  @include themes.large {
+    padding: 30px 50px 10px 50px;
+  }
+
+  @include themes.small {
+    padding: 30px 30px 10px 30px;
+  }
+
+  @include themes.superSmall {
+    padding: 10px 30px;
+  }
+}
+
+.logoWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+
+  .logotype {
+    margin-bottom: 2px;
+  }
+}
+
+.bottomWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  div {
+    display: flex;
+    gap: 30px;
+  }
+}
