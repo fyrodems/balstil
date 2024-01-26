@@ -16,9 +16,7 @@ export const Footer = () => {
     <footer className={styles.footerWrapper}>
       <Logotype />
       <ContactInfo />
-      <div>
-        <Sitemap />
-      </div>
+      <Sitemap />
       <BottomLinks />
     </footer>
   );

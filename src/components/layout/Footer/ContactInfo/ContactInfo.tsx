@@ -2,14 +2,14 @@ import styles from '../footer.module.scss';
 
 const ContactInfo = () => {
   return (
-    <div>
-      <div>
+    <div className={styles.contactInfoWrapper}>
+      <div className={styles.hotline}>
         <span>Infolinia jest czynna:</span>
         <span>pon-pt: 8:00-17:00</span>
         <span>sob: 9:00 - 14:00</span>
       </div>
 
-      <div>
+      <div className={styles.contactInfo}>
         <div>
           <img src="/assets/footer/phoneIcon.svg" alt="" />
           <span>310-437-2766</span>

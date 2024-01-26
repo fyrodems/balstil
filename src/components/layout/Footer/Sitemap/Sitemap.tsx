@@ -1,8 +1,10 @@
+import styles from '../footer.module.scss';
+
 const Sitemap = () => {
   return (
-    <>
-      <div>
-        <div>About</div>
+    <div className={styles.sitemap_wrapper}>
+      <div className={styles.sitemapColumn}>
+        <div className={styles.sitemapTitle}>About</div>
         <div>
           <div>About us</div>
           <div>Blog</div>
@@ -11,8 +13,8 @@ const Sitemap = () => {
           <div>In Press</div>
         </div>
       </div>
-      <div>
-        <div>About</div>
+      <div className={styles.sitemapColumn}>
+        <div className={styles.sitemapTitle}>About</div>
         <div>
           <div>About us</div>
           <div>Blog</div>
@@ -21,8 +23,8 @@ const Sitemap = () => {
           <div>In Press</div>
         </div>
       </div>
-      <div>
-        <div>About</div>
+      <div className={styles.sitemapColumn}>
+        <div className={styles.sitemapTitle}>About</div>
         <div>
           <div>About us</div>
           <div>Blog</div>
@@ -31,7 +33,7 @@ const Sitemap = () => {
           <div>In Press</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

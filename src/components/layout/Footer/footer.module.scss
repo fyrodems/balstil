@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   padding: 40px 60px 10px 60px;
   overflow: hidden;
+  font-size: 14px;
 
   @include themes.large {
     padding: 30px 50px 10px 50px;
@@ -37,13 +38,57 @@
   }
 }
 
+.contactInfoWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  .hotline {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 220px;
+    div {
+      display: flex;
+      gap: 15px;
+    }
+  }
+}
+
+.sitemap_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 60px 0;
+
+  .sitemapColumn {
+    .sitemapTitle {
+      font-weight: 700;
+    }
+    div {
+      margin-bottom: 24px;
+    }
+  }
+}
+
 .bottomWrapper {
   display: flex;
-  justify-content: space-between;
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  // justify-content: space-between;
+  text-align: center;
+  gap: 36px;
 
   div {
     display: flex;
+    justify-content: center;
     gap: 30px;
   }
 }
