@@ -1,6 +1,6 @@
 import { NextIntlClientProvider, useLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+// import { notFound } from 'next/navigation';
 import { Montserrat } from 'next/font/google';
 import classNames from 'classnames';
 import 'normalize.css/normalize.css';
@@ -30,7 +30,7 @@ export default async function RootLayout({ children }: Props) {
   try {
     messages = (await import(`@/libs/i18n/messages/${locale}.json`)).default;
   } catch (error) {
-    notFound();
+    // notFound();
   }
 
   return (
