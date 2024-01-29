@@ -22,8 +22,10 @@ export const Button: FC<ButtonProps> = ({
     <button
       className={classNames(
         className,
-        type === 'primary' ? 'bg-main-color' : 'bg-fuchsia-50',
-        `flex center  rounded-[50px] text-white p-2 px-5 
+        type === 'primary'
+          ? 'bg-main-color text-white'
+          : 'bg-fuchsia-50 text-black',
+        `flex center  rounded-[50px] p-2 px-5 
         relative overflow-hidden transition-transform duration-300`
       )}
       onMouseEnter={() => setIsHovered(true)}
@@ -35,10 +37,14 @@ export const Button: FC<ButtonProps> = ({
         {showArrow && (
           <div className="w-6 h-6 relative ml-2">
             <img
-              src="/assets/common/buttonArrow.svg"
+              src={
+                type === 'primary'
+                  ? '/assets/common/buttonArrow.svg'
+                  : '/assets/common/buttonArrowBlack.svg'
+              }
               alt=""
               className={classNames(
-                'w-full h-full absolute transform transition-transform duration-300',
+                'w-full h-full absolute transform transition-transform duration-300 ',
                 { 'translate-x-[3px] translate-y-[-3px]': isHovered }
               )}
             />

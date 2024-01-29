@@ -1,5 +1,6 @@
 'use client';
 
+import { News } from '@/components/homepage/News/News';
 import { SomeFiller } from '@/components/homepage/SomeFiller/SomeFiller';
 import { useTranslations } from 'next-intl';
 
@@ -10,6 +11,7 @@ export const Content: React.FC = () => {
     <main>
       {/* <p className="text-base sm:text-xl lg:text-2xl">{t('test')}</p> */}
       <SomeFiller />
+      <News />
       <SomeFiller />
     </main>
   );
