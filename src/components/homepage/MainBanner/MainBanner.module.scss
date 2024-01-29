@@ -1,0 +1,21 @@
+@use '@/app/styles/themes.scss' as themes;
+
+.mainBanner__wrapper {
+  min-height: 80vh;
+  background: linear-gradient(294deg, #fff 0%, #727272 100%);
+  border-radius: 0px 0px 0px 42px;
+  color: themes.$white;
+  padding: 50px 20px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 45px;
+    max-width: 300px;
+    margin-bottom: 40px;
+    line-height: 50px;
+  }
+
+  .CTA {
+    
+  }
+}

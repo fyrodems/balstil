@@ -18,7 +18,7 @@ export const PageTitle: React.FC<PageTitleProps> = ({
       <div className={styles.supportingText} style={{ color: mainColor }}>
         {supportingText}
       </div>
-      <div
+      <h1
         className={styles.pageTitle}
         style={{
           backgroundImage: `linear-gradient(${
@@ -27,7 +27,15 @@ export const PageTitle: React.FC<PageTitleProps> = ({
         }}
       >
         {pageTitle}
-      </div>
+      </h1>
     </div>
   );
 };
+
+{
+  /* <PageTitle
+pageTitle={'Cylinde'}
+supportingText={'ogrzewacz gazowy poziomy'}
+mainColor="#A48F59"
+/> */
+}

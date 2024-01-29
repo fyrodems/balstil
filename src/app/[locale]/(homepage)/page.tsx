@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Content } from '@/app/[locale]/(homepage)/content';
 import { LanguageSelector } from '@/components/layout/LanguageSelector';
-import { PageTitle } from '@/components/common/PageTitle/PageTitle';
+import { MainBanner } from '@/components/homepage/MainBanner/MainBanner';
 
 export async function generateMetadata() {
   const t = await getTranslations('metaData.homepage');
@@ -16,12 +16,7 @@ export default async function Homepage() {
   return (
     <>
       <LanguageSelector />
-
-      <PageTitle
-        pageTitle={'Cylinde'}
-        supportingText={'ogrzewacz gazowy poziomy'}
-        mainColor="#A48F59"
-      />
+      <MainBanner />
       <Content />
     </>
   );
