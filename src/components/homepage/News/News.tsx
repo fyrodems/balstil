@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from './news.module.scss';
+import styles from './News.module.scss';
 import { Button } from '@/components/common/Button/Button';
 
 export const News = () => {
@@ -16,7 +16,7 @@ export const News = () => {
       </div>
       <div className={classNames(styles.newsInnerWrapper)}>
         <div className={classNames(styles.singleNews, styles.singleNews__2)}>
-          <div >
+          <div>
             <h2>Nowe zastosowania</h2>
             <div className={styles.text}>
               Supporting line text lorem ipsum dolor sit amet, consectetur.

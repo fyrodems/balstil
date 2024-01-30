@@ -1,7 +1,7 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import styles from './footer.module.scss';
+import styles from './Footer.module.scss';
 import Image from 'next/image';
 import Logotype from './Logotype/Logotype';
 import ContactInfo from './ContactInfo/ContactInfo';
