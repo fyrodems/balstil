@@ -1,0 +1,32 @@
+.sliderTitle {
+  color: #af8e6d;
+  font-size: 30px;
+  font-weight: 300;
+  border: 1px solid rgba(64, 67, 84, 0.3);
+  border-left: none;
+  border-right: none;
+}
+
+.slick {
+  .product__wrapper {
+    border-radius: 12px;
+    background: var(--M3-sys-light-surface-container-low, #f7f2fa);
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+      0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  [class~='slick-track'] {
+    display: flex;
+    gap: 10px;
+  }
+  [class~="slick-arrow"] {
+    display: none !important;
+  }
+
+  .image {
+    margin: 20px auto;
+  }
+
+  .content {
+  }
+}

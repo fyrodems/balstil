@@ -6,7 +6,7 @@ interface ButtonProps {
   content?: string | React.ReactNode;
   children?: React.ReactNode;
   showArrow?: boolean;
-  className?: 'string';
+  className?: string;
 }
 
 export const Button: FC<ButtonProps> = ({
