@@ -3,13 +3,14 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Slider.module.scss';
 import Image from 'next/image';
+import { Button } from '@/components/common/Button/Button';
 
 export const Slider = () => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 0,
     // responsive: [
@@ -100,8 +101,22 @@ export const Slider = () => {
                 className={styles.image}
               />
               <div className={styles.content}>
-                <h3></h3>
+                <div>
+                  <h3 className={styles.title}>{product.title}</h3>
+                  <span className={styles.description}>
+                    {product.description}
+                  </span>
+                </div>
+                <div className={styles.rightContainer}>
+                  <span className={styles.price}>{product.price}</span>
+                  <span className={styles.oldPrice}>{product.oldPrice}</span>
+                  <span className={styles.omnibus}>
+                    najniższa cena <br /> z ostatnich 30 dni: <br />
+                    7,49 zł
+                  </span>
+                </div>
               </div>
+              <Button content="Szczegóły" className={styles.CTA} />
             </div>
           );
         })}
