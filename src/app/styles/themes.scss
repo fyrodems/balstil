@@ -9,45 +9,11 @@ $alto: #d9d9d9;
 $crimson: #dc143c;
 $grey: #c8cace;
 
-$shuttle: #545b6b;
-$hippie: #5ba5b0;
-$casper: #aabdd0;
-$pickled: #885a34;
-
-$mist: #adcbd2;
-$sky: #78afb9;
-$haze: #edf3f5;
-$greyBackground: #e7e7e7;
-$greyOpacity: #ffffff35;
-$headerOpacity: #d9d9d975;
-$headerGradient: linear-gradient(
-  180deg,
-  rgb(0 0 0 / 50%) 50%,
-  rgba(15, 26, 53, 0) 100%
-);
-
-$boatGalvanized: #adbfd2;
-$boatPowder: #d7e0e9;
-$boatFill: #eaf2fa;
-
-$specialGalvanized: #633e20;
-$specialPowder: #927863;
-$specialFill: #bb9b81;
-
-$luggageGalvanized: #3e4557;
-$luggagePowder: #6b7590;
-$luggageFill: #96a4c9;
-
-$carsGalvanized: #8fbbc3;
-$carsPowder: #b3cfd5;
-$carsFill: #c8dbe0;
-
-$superSmall: 420px;
-$small: 575.98px;
-$medium: 767.98px;
-$large: 991.98px;
-$extraLarge: 1199.98px;
-$max: 1399.98px;
+$breakpoint-s: 577px;
+$breakpoint-m: 769px;
+$breakpoint-l: 993px;
+$breakpoint-xl: 1201px;
+$breakpoint-xxl: 1501px;
 
 @mixin division {
   @media (min-width: #{$small}) and (max-width: #{$large}) {

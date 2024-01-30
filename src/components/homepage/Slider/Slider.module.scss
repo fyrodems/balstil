@@ -1,3 +1,6 @@
+@use '@/app/styles/themes.scss' as themes;
+@import '@/app/styles/mixins';
+
 .sliderTitle {
   color: #af8e6d;
   font-size: 30px;
@@ -6,7 +9,7 @@
   border-left: none;
   border-right: none;
   padding: 10px;
-  margin: 50px 0 30px;
+  margin: 30px 0 30px;
 }
 
 .slick {
@@ -35,6 +38,8 @@
     li[class='slick-active'] button:before {
       color: #af8e6d;
     }
+  }
+  @include laptop {
   }
 }
 

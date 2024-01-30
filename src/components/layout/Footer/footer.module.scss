@@ -14,17 +14,17 @@
   overflow: hidden;
   font-size: 12px;
 
-  @include themes.large {
-    padding: 30px 50px 10px 50px;
-  }
+  // @include themes.large {
+  //   padding: 30px 50px 10px 50px;
+  // }
 
-  @include themes.small {
-    padding: 30px 30px 10px 30px;
-  }
+  // @include themes.small {
+  //   padding: 30px 30px 10px 30px;
+  // }
 
-  @include themes.superSmall {
-    padding: 10px 30px;
-  }
+  // @include themes.superSmall {
+  //   padding: 10px 30px;
+  // }
 }
 
 .logoWrapper {
