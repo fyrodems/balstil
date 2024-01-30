@@ -1,152 +1,81 @@
-import { useRef, useState, MouseEvent } from 'react';
-import Image from 'next/image';
-import styles from './Slider.module.scss';
-import classNames from 'classnames';
+import Slick from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
-type Color = 'black' | 'brown' | 'red' | 'string';
-
-export const Slider: React.FC = () => {
-  const [currentColor, setCurrentColor] = useState<Color>('black');
-  const [transitioning, setTransitioning] = useState<boolean>(false);
-  const [selectedButton, setSelectedButton] = useState<Color>('black');
-  const prevSelectedButtonRef = useRef<HTMLDivElement | null>(null);
-
-  const handlePaginationButtonClick = (
-    color: Color,
-    buttonRef: HTMLDivElement
-  ) => {
-    setTransitioning(true);
-    setTimeout(() => {
-      setCurrentColor(color);
-      setTransitioning(false);
-    }, 500);
-
-    // Zmiana bordera dla aktualnie wybranego przycisku
-    if (selectedButton !== color) {
-      setSelectedButton(color);
-      buttonRef.style.borderWidth = '4px';
-      buttonRef.style.transform = 'scale(1.2)';
-
-      // Zmiana bordera dla poprzednio wybranego przycisku
-      if (prevSelectedButtonRef.current) {
-        prevSelectedButtonRef.current.style.borderWidth = '2px';
-        prevSelectedButtonRef.current.style.transform = 'scale(1)';
-      }
-
-      prevSelectedButtonRef.current = buttonRef;
-    }
+export const Slider = () => {
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 3,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 600,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //       initialSlide: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
   };
 
-  const handleFancyPaginationButtonClick = (color: Color) => {
-    setTransitioning(true);
-    setTimeout(() => {
-      setCurrentColor(color);
-      setTransitioning(false);
-    }, 500);
-  };
+  const products = [
+    {
+      image: '',
+      title: 'Kominek',
+      description: 'Supporting line text',
+      price: '300$',
+      oldPrice: '350$',
+    },
+  ];
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.slider__wrapper}>
-        <div className={styles.imageContainer}>
-          <Image
-            className={classNames(styles.image, {
-              [styles.transitioning]: transitioning,
-            })}
-            width={150}
-            height={150}
-            alt="fireplace"
-            src={`/assets/mainBanner/${currentColor}.png`}
-          />
+    <div>
+      <Slick {...settings}>
+        <div>
+          <h3>1</h3>
         </div>
-        <div className={styles.paginationWrapper}>
-          <div
-            className={classNames(
-              styles.paginationButton,
-              styles.paginationButton__brown,
-              { [styles.selectedButton]: selectedButton === 'brown' }
-            )}
-            onClick={(e: MouseEvent<HTMLDivElement>) =>
-              handlePaginationButtonClick('brown', e.currentTarget)
-            }
-          ></div>
-          <div
-            className={classNames(
-              styles.paginationButton,
-              styles.paginationButton__black,
-              { [styles.selectedButton]: selectedButton === 'black' }
-            )}
-            onClick={(e: MouseEvent<HTMLDivElement>) =>
-              handlePaginationButtonClick('black', e.currentTarget)
-            }
-          ></div>
-          <div
-            className={classNames(
-              styles.paginationButton,
-              styles.paginationButton__red,
-              { [styles.selectedButton]: selectedButton === 'red' }
-            )}
-            onClick={(e: MouseEvent<HTMLDivElement>) =>
-              handlePaginationButtonClick('red', e.currentTarget)
-            }
-          ></div>
+        <div>
+          <h3>2</h3>
         </div>
-      </div>
-      <div className={styles.fancyPagination}>
-        <div
-          className={classNames(
-            styles.fancyPaginationButton,
-            styles.fancyPaginationButton__red
-          )}
-          onClick={(e: MouseEvent<HTMLDivElement>) =>
-            handleFancyPaginationButtonClick('red')
-          }
-        >
-          <Image
-            className={classNames(styles.fancyImage)}
-            width={150}
-            height={150}
-            alt="fireplace"
-            src={`/assets/mainBanner/red.png`}
-          />
+        <div>
+          <h3>3</h3>
         </div>
-
-        <div
-          className={classNames(
-            styles.fancyPaginationButton,
-            styles.fancyPaginationButton__black
-          )}
-          onClick={(e: MouseEvent<HTMLDivElement>) =>
-            handleFancyPaginationButtonClick('black')
-          }
-        >
-          <Image
-            className={classNames(styles.fancyImage)}
-            width={150}
-            height={150}
-            alt="fireplace"
-            src={`/assets/mainBanner/black.png`}
-          />
+        <div>
+          <h3>4</h3>
         </div>
-
-        <div
-          className={classNames(
-            styles.fancyPaginationButton,
-            styles.fancyPaginationButton__brown
-          )}
-          onClick={(e: MouseEvent<HTMLDivElement>) =>
-            handleFancyPaginationButtonClick('brown')
-          }
-        >
-          <Image
-            className={classNames(styles.fancyImage)}
-            width={150}
-            height={150}
-            alt="fireplace"
-            src={`/assets/mainBanner/brown.png`}
-          />
+        <div>
+          <h3>5</h3>
         </div>
-      </div>
+        <div>
+          <h3>6</h3>
+        </div>
+        <div>
+          <h3>7</h3>
+        </div>
+        <div>
+          <h3>8</h3>
+        </div>
+      </Slick>
     </div>
   );
 };

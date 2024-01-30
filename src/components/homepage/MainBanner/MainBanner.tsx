@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/common/Button/Button';
 import styles from './MainBanner.module.scss';
-import { Slider } from '../Slider/Slider';
+import { MainBannerSlider } from '../MainBannerSlider/MainBannerSlider';
 
 export const MainBanner = () => {
   return (
@@ -13,7 +13,7 @@ export const MainBanner = () => {
         content="Dowiedz się więcej"
         showArrow={false}
       />
-      <Slider />
+      <MainBannerSlider />
     </div>
   );
 };

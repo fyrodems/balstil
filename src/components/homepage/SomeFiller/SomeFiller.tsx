@@ -16,6 +16,8 @@ export const SomeFiller = () => {
         margin: '20px 0',
         padding: '20px 15px',
         border: '1px solid rgba(64, 67, 84, 0.30)',
+        borderLeft: 0,
+        borderRight: 0,
       }}
     >
       <div>Części 13456 +</div>

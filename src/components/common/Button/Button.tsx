@@ -35,7 +35,7 @@ export const Button: FC<ButtonProps> = ({
         {content}
         {children}
         {showArrow && (
-          <div className="w-6 h-6 relative ml-2">
+          <div className="w-7 h-7 relative ml-2">
             <img
               src={
                 type === 'primary'
@@ -45,7 +45,7 @@ export const Button: FC<ButtonProps> = ({
               alt=""
               className={classNames(
                 'w-full h-full absolute transform transition-transform duration-300 ',
-                { 'translate-x-[3px] translate-y-[-3px]': isHovered }
+                { 'translate-x-[4px] translate-y-[-4px]': isHovered }
               )}
             />
           </div>
