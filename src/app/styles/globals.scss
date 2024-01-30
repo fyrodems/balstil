@@ -8,6 +8,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  scrollbar-width: none; /* Dla przeglądarek opartych na WebKit */
+  -ms-overflow-style: none; /* Dla przeglądarek opartych na MS Edge/IE */
 }
 
 ::-webkit-scrollbar {

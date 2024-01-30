@@ -112,7 +112,7 @@ export const Slider = () => {
                   <span className={styles.oldPrice}>{product.oldPrice}</span>
                   <span className={styles.omnibus}>
                     najniższa cena <br /> z ostatnich 30 dni: <br />
-                    7,49 zł
+                    7,49 PLN
                   </span>
                 </div>
               </div>

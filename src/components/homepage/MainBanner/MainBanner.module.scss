@@ -1,7 +1,7 @@
 @use '@/app/styles/themes.scss' as themes;
 
 .mainBanner__wrapper {
-  min-height: 80vh;
+  min-height: 70vh;
   background: linear-gradient(295deg, #fff 0%, #727272 100%);
   border-radius: 0px 0px 0px 42px;
   color: themes.$white;

@@ -13,10 +13,28 @@
   [class~='slick-track'] {
     display: flex;
     gap: 10px;
+    margin-bottom: 20px;
   }
 
   [class~='slick-arrow'] {
     display: none !important;
+  }
+
+  [class='slick-dots'] {
+    margin: 15px 0;
+    li button:before {
+      width: 15px;
+      height: 15px;
+      font-size: 15px;
+      transition: 200ms;
+    }
+    li button:hover:before {
+      color: #af8e6d;
+    }
+
+    li[class='slick-active'] button:before {
+      color: #af8e6d;
+    }
   }
 }
 

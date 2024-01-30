@@ -1,6 +1,6 @@
 import { useRef, useState, MouseEvent } from 'react';
 import Image from 'next/image';
-import styles from './Slider.module.scss';
+import styles from './MainBannerSlider.module.scss';
 import classNames from 'classnames';
 
 type Color = 'black' | 'brown' | 'red' | 'string';
@@ -46,7 +46,7 @@ export const MainBannerSlider: React.FC = () => {
   };
 
   return (
-    <div className={styles.slider}>
+    <div className={styles.mainBannerSlider}>
       <div className={styles.slider__wrapper}>
         <div className={styles.imageContainer}>
           <Image

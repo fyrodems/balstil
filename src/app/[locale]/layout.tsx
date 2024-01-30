@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Montserrat } from 'next/font/google';
 import classNames from 'classnames';
 import 'normalize.css/normalize.css';
-import '../globals.css';
+import '../tailwindGlobals.css';
 import '../styles/globals.scss';
 
 import { Footer } from '@/components/layout/Footer';

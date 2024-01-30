@@ -1,4 +1,4 @@
-.slider {
+.mainBannerSlider {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 .slider__wrapper {
   width: fit-content;
   float: right;
-  transform: translateY(-40px);
+  transform: translateY(-20px); // 60
   display: flex;
   align-items: center;
   gap: 20px;
