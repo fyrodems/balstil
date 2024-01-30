@@ -1,8 +1,9 @@
 @use '@/app/styles/themes.scss' as themes;
 @import '@/app/styles/mixins';
+@import '@/app/styles/themes';
 
 .sliderTitle {
-  color: #af8e6d;
+  color: $mainColor;
   font-size: 30px;
   font-weight: 300;
   border: 1px solid rgba(64, 67, 84, 0.3);
@@ -32,11 +33,11 @@
       transition: 200ms;
     }
     li button:hover:before {
-      color: #af8e6d;
+      color: $mainColor;
     }
 
     li[class='slick-active'] button:before {
-      color: #af8e6d;
+      color: $mainColor;
     }
   }
   @include laptop {
@@ -80,7 +81,7 @@
     }
 
     .oldPrice {
-      color: #af8e6d;
+      color: $mainColor;
       font-size: 20px;
       letter-spacing: 0.25px;
       text-decoration-line: line-through;

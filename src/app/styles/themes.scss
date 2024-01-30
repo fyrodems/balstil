@@ -9,50 +9,10 @@ $alto: #d9d9d9;
 $crimson: #dc143c;
 $grey: #c8cace;
 
+$mainColor: #af8e6d;
+
 $breakpoint-s: 577px;
 $breakpoint-m: 769px;
 $breakpoint-l: 993px;
 $breakpoint-xl: 1201px;
 $breakpoint-xxl: 1501px;
-
-@mixin division {
-  @media (min-width: #{$small}) and (max-width: #{$large}) {
-    @content;
-  }
-}
-
-@mixin max {
-  @media (max-width: #{$max}) {
-    @content;
-  }
-}
-
-@mixin extraLarge {
-  @media (max-width: #{$extraLarge}) {
-    @content;
-  }
-}
-
-@mixin large {
-  @media (max-width: #{$large}) {
-    @content;
-  }
-}
-
-@mixin medium {
-  @media (max-width: #{$medium}) {
-    @content;
-  }
-}
-
-@mixin small {
-  @media (max-width: #{$small}) {
-    @content;
-  }
-}
-
-@mixin superSmall {
-  @media (max-width: #{$superSmall}) {
-    @content;
-  }
-}
