@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { FC, useState } from 'react';
 
 interface ButtonProps {
-  type?: 'primary' | 'secondary';
+  type?: 'primary' | 'secondary' | 'tertiary';
   content?: string | React.ReactNode;
   children?: React.ReactNode;
   showArrow?: boolean;
@@ -40,7 +40,9 @@ export const Button: FC<ButtonProps> = ({
               src={
                 type === 'primary'
                   ? '/assets/common/buttonArrow.svg'
-                  : '/assets/common/buttonArrowBlack.svg'
+                  : type === 'secondary'
+                  ? '/assets/common/buttonArrowBlack.svg'
+                  : '/assets/common/buttonArrowGold.svg'
               }
               alt=""
               className={classNames(

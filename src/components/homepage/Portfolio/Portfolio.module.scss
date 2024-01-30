@@ -1,0 +1,53 @@
+@import '@/app/styles/themes';
+
+.portfolioWrapper {
+  .portfolioQuote {
+    border-radius: 12px;
+    background: var(--M3-sys-light-surface-container-low, #f7f2fa);
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+      0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 20px;
+    // typography
+    color: #1b1f2d;
+    font-size: 20px;
+    font-style: italic;
+  }
+
+  .CTA {
+    margin-left: auto;
+    margin-top: 16px;
+  }
+
+  .gallery {
+    display: block;
+    position: relative;
+    margin: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+
+    img {
+      width: 100%;
+      transition: 200ms;
+    }
+
+    &:hover {
+      .image {
+        transform: scale(1.1);
+      }
+    }
+
+    .galleryButton {
+      color: $mainColor;
+      border-radius: 0;
+      margin-left: auto;
+      border-bottom-left-radius: 20px;
+      z-index: 50;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-right: 5px;
+    }
+  }
+}
