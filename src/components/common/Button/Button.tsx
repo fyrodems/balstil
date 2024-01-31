@@ -25,8 +25,8 @@ export const Button: FC<ButtonProps> = ({
         type === 'primary'
           ? 'bg-main-color text-white'
           : 'bg-fuchsia-50 text-black',
-        `flex center  rounded-[50px] p-2 px-5 
-        relative overflow-hidden transition-transform duration-300`
+        'font-medium flex center rounded-[50px] p-2 px-5',
+        'relative overflow-hidden transition-transform duration-300'
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

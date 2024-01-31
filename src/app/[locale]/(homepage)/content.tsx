@@ -1,6 +1,7 @@
 'use client';
 
 import { News } from '@/components/homepage/News/News';
+import { Newsletter } from '@/components/homepage/Newsletter/Newsletter';
 import { Portfolio } from '@/components/homepage/Portfolio/Portfolio';
 import { Slider } from '@/components/homepage/Slider/Slider';
 import { SomeFiller } from '@/components/homepage/SomeFiller/SomeFiller';
@@ -17,6 +18,7 @@ export const Content: React.FC = () => {
       <Slider />
       <SomeFiller />
       <Portfolio />
+      <Newsletter />
     </main>
   );
 };
