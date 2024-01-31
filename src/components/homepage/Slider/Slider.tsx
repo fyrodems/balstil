@@ -4,41 +4,64 @@ import 'slick-carousel/slick/slick-theme.css';
 import styles from './Slider.module.scss';
 import Image from 'next/image';
 import { Button } from '@/components/common/Button/Button';
+import { useRef } from 'react';
 
 export const Slider = () => {
+  const sliderRef = useRef(null);
+
+  const next = () => {
+    sliderRef.current.slickNext();
+  };
+
+  const previous = () => {
+    sliderRef.current.slickPrev();
+  };
+
   const settings = {
-    dots: true,
+    dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    adaptiveHeight: true,
+    swipeToSlide: true,
+    slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    // responsive: [
-    //   {
-    //     breakpoint: 1024,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 3,
-    //       infinite: true,
-    //       dots: true,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 600,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 2,
-    //       initialSlide: 2,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 480,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //     },
-    //   },
-    // ],
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    nextArrow: null,
+    prevArrow: null,
+
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 2,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          dots: true,
+        },
+      },
+    ],
   };
 
   const products = [
@@ -89,7 +112,7 @@ export const Slider = () => {
   return (
     <>
       <h2 className={styles.sliderTitle}>Nasze produkty</h2>
-      <Slick {...settings} className={styles.slick}>
+      <Slick ref={sliderRef} {...settings} className={styles.slick}>
         {products.map((product, i) => {
           return (
             <div key={i} className={styles.product__wrapper}>
@@ -111,7 +134,8 @@ export const Slider = () => {
                   <span className={styles.price}>{product.price}</span>
                   <span className={styles.oldPrice}>{product.oldPrice}</span>
                   <span className={styles.omnibus}>
-                    najniższa cena <br /> z ostatnich 30 dni: <br />
+                    najniższa cena <br />
+                    z ostatnich 30 dni: <br />
                     7,49 PLN
                   </span>
                 </div>
@@ -121,6 +145,14 @@ export const Slider = () => {
           );
         })}
       </Slick>
+      <div className={styles.arrowsContainer}>
+        <button className={styles.prevArrow} onClick={previous}>
+          <img src="/assets/productsSlider/arrowPrev.svg" alt="" />
+        </button>
+        <button className={styles.nextArrow} onClick={next}>
+          <img src="/assets/productsSlider/arrowNext.svg" alt="" />
+        </button>
+      </div>
     </>
   );
 };

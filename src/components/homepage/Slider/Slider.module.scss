@@ -13,18 +13,22 @@
 }
 
 .slick {
+  [class='slick-list'] {
+    margin-bottom: 30px;
+
+    @media screen and (min-width: 1001px) {
+      margin-bottom: 10px;
+    }
+  }
+
   [class~='slick-track'] {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  [class~='slick-arrow'] {
-    display: none !important;
   }
 
   [class='slick-dots'] {
-    margin: 15px 0;
+    margin-top: 15px;
+    padding-top: 15px;
     li button:before {
       width: 15px;
       height: 15px;
@@ -40,6 +44,40 @@
     }
   }
   @include laptop {
+  }
+}
+
+.arrowsContainer {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  display: none;
+
+  .prevArrow,
+  .nextArrow {
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.05);
+    display: grid;
+    place-items: center;
+    img {
+      transform: rotate(180deg);
+    }
+  }
+
+  .prevArrow {
+    background: #fff;
+  }
+
+  .nextArrow {
+    background: #b7a797;
+    color: white;
+  }
+  @media screen and (min-width: 1001px) {
+    display: flex;
   }
 }
 
