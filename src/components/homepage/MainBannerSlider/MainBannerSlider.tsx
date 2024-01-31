@@ -56,7 +56,7 @@ export const MainBannerSlider: React.FC = () => {
             width={150}
             height={150}
             alt="fireplace"
-            src={`/assets/mainBanner/${currentColor}.png`}
+            src={`/assets/mainBanner/${currentColor}.webp`}
           />
         </div>
         <div className={styles.paginationWrapper}>
@@ -107,7 +107,7 @@ export const MainBannerSlider: React.FC = () => {
             width={150}
             height={150}
             alt="fireplace"
-            src={`/assets/mainBanner/red.png`}
+            src={`/assets/mainBanner/red.webp`}
           />
         </div>
 
@@ -125,7 +125,7 @@ export const MainBannerSlider: React.FC = () => {
             width={150}
             height={150}
             alt="fireplace"
-            src={`/assets/mainBanner/black.png`}
+            src={`/assets/mainBanner/black.webp`}
           />
         </div>
 
@@ -143,7 +143,7 @@ export const MainBannerSlider: React.FC = () => {
             width={150}
             height={150}
             alt="fireplace"
-            src={`/assets/mainBanner/brown.png`}
+            src={`/assets/mainBanner/brown.webp`}
           />
         </div>
       </div>
