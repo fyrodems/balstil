@@ -1,11 +1,36 @@
 @use '@/app/styles/themes.scss' as themes;
+@import '@/app/styles/mixins';
 
-.mainBanner__wrapper {
-  min-height: 70vh;
+.mainBannerWrapper {
+  min-height: fit-content;
   background: linear-gradient(295deg, #fff 0%, #727272 100%);
   border-radius: 0px 0px 0px 42px;
   color: themes.$white;
-  padding: 50px 20px;
+  padding: 50px 20px 70px;
+
+  > div {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 500px) {
+    padding-bottom: 10px;
+  }
+
+  @include tablet {
+    height: 1000px;
+  }
+
+  @include laptop {
+    margin-left: 70px;
+    padding: 60px;
+    padding-top: 1px;
+    height: 730px;
+  }
+
+  @include desktop {
+    height: 900px;
+  }
 
   h1 {
     font-weight: 700;
@@ -13,9 +38,38 @@
     max-width: 300px;
     margin-bottom: 40px;
     line-height: 50px;
+
+    @include tablet {
+      margin-top: 90px;
+      font-size: 60px;
+      max-width: 400px;
+      line-height: 65px;
+    }
+
+    @include desktop {
+      margin-top: 300px;
+      font-size: 75px;
+      max-width: 450px;
+      line-height: 80px;
+    }
   }
 
   .CTA {
-    
+    background: linear-gradient(
+        268deg,
+        rgba(86, 45, 3, 0.2) 5.1%,
+        rgba(255, 252, 249, 0) 90.72%
+      ),
+      #af8e6d;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include desktop {
+      font-size: 22px;
+      padding: 10px 40px;
+      margin-top: 70px;
+    }
   }
 }

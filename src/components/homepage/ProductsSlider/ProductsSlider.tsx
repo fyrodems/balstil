@@ -1,20 +1,24 @@
-import Slick from 'react-slick';
+import React, { useRef } from 'react';
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './Slider.module.scss';
+import styles from './ProductsSlider.module.scss';
 import Image from 'next/image';
 import { Button } from '@/components/common/Button/Button';
-import { useRef } from 'react';
 
-export const Slider = () => {
-  const sliderRef = useRef(null);
+export const ProductsSlider = () => {
+  const sliderRef = useRef<Slider>(null);
 
   const next = () => {
-    sliderRef.current.slickNext();
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
   };
 
   const previous = () => {
-    sliderRef.current.slickPrev();
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
   };
 
   const settings = {
@@ -30,8 +34,6 @@ export const Slider = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    nextArrow: null,
-    prevArrow: null,
 
     responsive: [
       {
@@ -112,7 +114,7 @@ export const Slider = () => {
   return (
     <>
       <h2 className={styles.sliderTitle}>Nasze produkty</h2>
-      <Slick ref={sliderRef} {...settings} className={styles.slick}>
+      <Slider ref={sliderRef} {...settings} className={styles.slick}>
         {products.map((product, i) => {
           return (
             <div key={i} className={styles.product__wrapper}>
@@ -144,7 +146,7 @@ export const Slider = () => {
             </div>
           );
         })}
-      </Slick>
+      </Slider>
       <div className={styles.arrowsContainer}>
         <button className={styles.prevArrow} onClick={previous}>
           <img src="/assets/productsSlider/arrowPrev.svg" alt="" />

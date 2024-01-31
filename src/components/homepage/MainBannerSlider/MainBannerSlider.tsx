@@ -47,7 +47,7 @@ export const MainBannerSlider: React.FC = () => {
 
   return (
     <div className={styles.mainBannerSlider}>
-      <div className={styles.slider__wrapper}>
+      <div className={styles.sliderWrapper}>
         <div className={styles.imageContainer}>
           <Image
             className={classNames(styles.image, {
@@ -63,13 +63,14 @@ export const MainBannerSlider: React.FC = () => {
           <div
             className={classNames(
               styles.paginationButton,
-              styles.paginationButton__brown,
-              { [styles.selectedButton]: selectedButton === 'brown' }
+              styles.paginationButton__red,
+              { [styles.selectedButton]: selectedButton === 'red' }
             )}
             onClick={(e: MouseEvent<HTMLDivElement>) =>
-              handlePaginationButtonClick('brown', e.currentTarget)
+              handlePaginationButtonClick('red', e.currentTarget)
             }
           ></div>
+
           <div
             className={classNames(
               styles.paginationButton,
@@ -83,11 +84,11 @@ export const MainBannerSlider: React.FC = () => {
           <div
             className={classNames(
               styles.paginationButton,
-              styles.paginationButton__red,
-              { [styles.selectedButton]: selectedButton === 'red' }
+              styles.paginationButton__brown,
+              { [styles.selectedButton]: selectedButton === 'brown' }
             )}
             onClick={(e: MouseEvent<HTMLDivElement>) =>
-              handlePaginationButtonClick('red', e.currentTarget)
+              handlePaginationButtonClick('brown', e.currentTarget)
             }
           ></div>
         </div>
