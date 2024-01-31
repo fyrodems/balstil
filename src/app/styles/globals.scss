@@ -1,12 +1,4 @@
-html {
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-}
+@import './mixins';
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -35,4 +27,88 @@ body {
 ::-webkit-scrollbar-track:active,
 ::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2,
+  h3 {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  @include phone-landscape {
+    font-size: 13px;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  @include tablet {
+    font-size: 16px;
+
+    /*     h1 {
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 20px;
+    } */
+
+    button {
+      font-size: 16px;
+    }
+  }
+
+  @include laptop {
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 40px;
+    }
+  }
+
+  @include desktop {
+    h2 {
+      font-size: 50px;
+    }
+  }
+
+  @include desktop-large {
+    font-size: 18px;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    button {
+      font-size: 18px;
+    }
+  }
+  @media screen and (min-width: 2000px) {
+    h3 {
+      font-size: 30px;
+    }
+  }
 }
