@@ -34,6 +34,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  font-size: 13px;
 
   h1 {
     font-size: 20px;
@@ -82,16 +83,16 @@ body {
 
   @include laptop {
     h1 {
-      font-size: 50px;
+      // font-size: 50px;
     }
     h2 {
-      font-size: 40px;
+      font-size: 18px;
     }
   }
 
   @include desktop {
     h2 {
-      font-size: 50px;
+      font-size: 20px;
     }
   }
 
@@ -100,10 +101,6 @@ body {
 
     h3 {
       font-size: 24px;
-    }
-
-    button {
-      font-size: 18px;
     }
   }
   @media screen and (min-width: 2000px) {

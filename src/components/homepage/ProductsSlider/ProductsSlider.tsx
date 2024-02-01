@@ -43,7 +43,7 @@ export const ProductsSlider = () => {
         },
       },
       {
-        breakpoint: 1000,
+        breakpoint: 1150,
         settings: {
           slidesToShow: 3,
           dots: true,
@@ -112,7 +112,7 @@ export const ProductsSlider = () => {
   ];
 
   return (
-    <>
+    <section className={styles.sliderWrapper}>
       <h2 className={styles.sliderTitle}>Nasze produkty</h2>
       <Slider ref={sliderRef} {...settings} className={styles.slick}>
         {products.map((product, i) => {
@@ -155,6 +155,6 @@ export const ProductsSlider = () => {
           <img src="/assets/productsSlider/arrowNext.svg" alt="" />
         </button>
       </div>
-    </>
+    </section>
   );
 };

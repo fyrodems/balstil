@@ -23,6 +23,10 @@
     transform: translateY(-470px);
     gap: 50px;
   }
+
+  @include desktop-large {
+    transform: translateY(-565px);
+  }
 }
 
 .sliderWrapper {
@@ -63,7 +67,8 @@
     border-radius: 20px;
     border: 2px solid #fff;
     cursor: pointer;
-    transition: 200ms;
+    transform: scale(1);
+    // transition: 250ms;
 
     &__brown {
       background: #987d76;
@@ -122,6 +127,7 @@
     align-items: flex-end;
     justify-content: center;
     cursor: pointer;
+
     @include tablet {
       transform: scale(1.5);
     }
