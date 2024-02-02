@@ -8,9 +8,17 @@ export const Newsletter = () => {
       <div className={styles.secondaryHeading}>Bądź na bieżąco</div>
       <form className={styles.formWrapper}>
         <div className={styles.inputsWrapper}>
-          <input type="email" placeholder="E-mail" />
-          <input type="tel" placeholder="Numer telefonu" />
+          <div>
+            <label htmlFor="email">Email</label>
+            <input type="email" placeholder="E-mail" id="email" />
+          </div>
+          <div>
+            <label htmlFor="tel">Numer telefonu</label>
+            <input type="tel" placeholder="Numer telefonu" id="tel" />
+          </div>
         </div>
+
+        <div className={styles.agreementsWrapper}></div>
 
         <Button
           type="secondary"
