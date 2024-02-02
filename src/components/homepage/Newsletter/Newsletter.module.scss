@@ -14,6 +14,12 @@
     height: 280px;
   }
 
+  @include desktop-large {
+    @include limit-and-center(1565px);
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
   h2 {
     background: #fef7ff;
     position: absolute;

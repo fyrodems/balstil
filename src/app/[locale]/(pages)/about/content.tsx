@@ -8,7 +8,7 @@ export const Content: React.FC = () => {
 
   return (
     <main>
-      <p className="text-base sm:text-xl lg:text-2xl">{t('test')}</p>
+      {/* <p className="text-base sm:text-xl lg:text-2xl">{t('test')}</p> */}
       <Button>Sprawdź</Button>
     </main>
   );

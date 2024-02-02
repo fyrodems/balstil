@@ -10,7 +10,7 @@ export async function generateMetadata() {
   };
 }
 
-export default async function Homepage() {
+export default async function About() {
   return (
     <>
       <Content />
