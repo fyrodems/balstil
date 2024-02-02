@@ -1,5 +1,22 @@
 .sectionTitle {
   font-size: 20px;
   font-weight: 700;
-  margin: 10px 0;
+  margin: 10px 0 30px;
+}
+
+.attributesWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto 80px;
+  gap: 30px;
+
+  .attribute {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
