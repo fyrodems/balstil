@@ -1,12 +1,17 @@
 import Image from 'next/image';
 import styles from './SectionFirst.module.scss';
+import { isMobileWidth } from '@/utils/functions';
 
 export const SectionFirst = () => {
   return (
-    <div>
+    <div className={styles.sectionWrapper}>
       <div>
         <Image
-          src="/assets/about/onas1.png"
+          src={
+            isMobileWidth()
+              ? '/assets/about/onas1.png'
+              : '/assets/about/onas1-desktop.png'
+          }
           alt="cylinder"
           width={1000}
           height={0}

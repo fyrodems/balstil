@@ -31,11 +31,3 @@ export const PageTitle: React.FC<PageTitleProps> = ({
     </div>
   );
 };
-
-{
-  /* <PageTitle
-pageTitle={'Cylinde'}
-supportingText={'ogrzewacz gazowy poziomy'}
-mainColor="#A48F59"
-/> */
-}

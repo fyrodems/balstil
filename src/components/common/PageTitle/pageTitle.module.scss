@@ -1,3 +1,5 @@
+@import '@/app/styles/mixins';
+
 .pageTitleWrapper {
   margin: 100px auto 50px;
   width: fit-content;
@@ -6,6 +8,10 @@
   .supportingText {
     font-weight: 500;
     font-size: 16px;
+
+    @include laptop {
+      font-size: 26px;
+    }
   }
 
   .pageTitle {
@@ -14,5 +20,9 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @include laptop {
+      font-size: 60px;
+    }
   }
 }

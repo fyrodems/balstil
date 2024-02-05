@@ -1,11 +1,60 @@
+@import '@/app/styles/mixins';
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include laptop {
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    margin: 20px 50px;
+  }
+
+  @include desktop-large {
+    max-width: 1800px;
+  }
+
+  img {
+    @include laptop {
+      margin: 0;
+      max-width: 400px;
+    }
+
+    @include desktop {
+      max-width: 550px;
+    }
+
+    @include desktop-large {
+      max-width: 700px;
+    }
+  }
+}
+
 .content {
   font-weight: 300;
   margin: 80px 0;
+  @include laptop {
+    margin: 0;
+    max-width: 460px;
+  }
+
+  @include desktop-large {
+    max-width: 550px;
+  }
+
+  @media screen and (min-width: 1900px) {
+    margin-right: 75px;
+  }
 
   h2 {
     font-size: 20px;
     font-weight: 700;
     margin: 10px 0;
+    @include laptop {
+      font-size: 30px;
+    }
   }
 
   > p {
