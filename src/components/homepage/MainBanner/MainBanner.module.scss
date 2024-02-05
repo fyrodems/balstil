@@ -61,12 +61,14 @@
   }
 
   .CTA {
+    z-index: 500;
     background: linear-gradient(
         268deg,
         rgba(86, 45, 3, 0.2) 5.1%,
         rgba(255, 252, 249, 0) 90.72%
       ),
       #af8e6d;
+    position: relative;
 
     @include tablet {
       font-size: 20px;

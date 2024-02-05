@@ -10,10 +10,11 @@ export const Portfolio = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore
         </p>
-        <Button content="Szczegóły" className={styles.CTA} />
+        <Button to="#" content="Szczegóły" className={styles.CTA} />
       </div>
-      <Link className={styles.gallery} href="/">
+      <Link className={styles.gallery} href="#">
         <Button
+          to="#"
           className={styles.galleryButton}
           content="KOMINEK"
           type="tertiary"

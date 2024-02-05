@@ -21,6 +21,7 @@ export const Newsletter = () => {
         <div className={styles.agreementsWrapper}></div>
 
         <Button
+          to="#"
           type="secondary"
           content="Zapisz się"
           className={styles.formButton}

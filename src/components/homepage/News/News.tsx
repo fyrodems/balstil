@@ -11,7 +11,7 @@ export const News = () => {
           <div className={styles.text}>
             Supporting line text lorem ipsum dolor sit amet, consectetur.
           </div>
-          <Button content={'Sprawdź'} type={'secondary'} />
+          <Button to="#" content={'Sprawdź'} type={'secondary'} />
         </div>
       </div>
       <div className={classNames(styles.newsInnerWrapper)}>
@@ -21,7 +21,7 @@ export const News = () => {
             <div className={styles.text}>
               Supporting line text lorem ipsum dolor sit amet, consectetur.
             </div>
-            <Button content={'Sprawdź'} type={'secondary'} />
+            <Button to="#" content={'Sprawdź'} type={'secondary'} />
           </div>
         </div>
         <div className={classNames(styles.singleNews, styles.singleNews__3)}>
@@ -30,7 +30,7 @@ export const News = () => {
             <div className={styles.text}>
               Supporting line text lorem ipsum dolor sit amet, consectetur.
             </div>
-            <Button content={'Sprawdź'} type={'secondary'} />
+            <Button to="#" content={'Sprawdź'} type={'secondary'} />
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@ export const News = () => {
           <div className={styles.text}>
             Supporting line text lorem ipsum dolor sit amet, consectetur.
           </div>
-          <Button content={'Sprawdź'} type={'secondary'} />
+          <Button to="#" content={'Sprawdź'} type={'secondary'} />
         </div>
       </div>
     </section>

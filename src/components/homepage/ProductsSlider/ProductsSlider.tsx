@@ -142,7 +142,7 @@ export const ProductsSlider = () => {
                   </span>
                 </div>
               </div>
-              <Button content="Szczegóły" className={styles.CTA} />
+              <Button to="#" content="Szczegóły" className={styles.CTA} />
             </div>
           );
         })}
