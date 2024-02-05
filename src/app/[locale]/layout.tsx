@@ -17,8 +17,6 @@ export async function generateMetadata() {
   return {
     title: t('title'),
     description: t('description'),
-    // icons: { icon: '/favicon.ico' },
-    // icons: { icon: '/icon.png' },
   };
 }
 
@@ -37,14 +35,7 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={locale}>
-      <body
-        className={classNames(
-          montserrat.className,
-          'bg-light-bg'
-          // 'container mx-auto p4'
-          /* text-slate-100 - color */
-        )}
-      >
+      <body className={classNames(montserrat.className, 'bg-light-bg')}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

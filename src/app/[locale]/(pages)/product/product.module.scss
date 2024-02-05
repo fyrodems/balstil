@@ -1,0 +1,11 @@
+@import '@/app/styles/mixins';
+
+.main {
+  max-width: 1900px;
+  margin: 0 20px;
+
+  @include desktop {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
