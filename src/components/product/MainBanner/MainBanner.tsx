@@ -89,11 +89,11 @@ export const MainBanner: React.FC = () => {
         </div>
         <div className={styles.CTA}>
           <div>
-            <h2>Cylinde</h2>
+            <span>Cylinde</span>
             <span>300$</span>
           </div>
           <span>Supporting line text</span>
-          <Button to={'#'} content="Dodaj do koszyka" />
+          <Button to={'/'} content="Dodaj do koszyka" />
         </div>
       </div>
     </>
