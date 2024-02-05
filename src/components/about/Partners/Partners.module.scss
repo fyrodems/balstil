@@ -1,11 +1,17 @@
+@import '@/app/styles/mixins';
+
 .sectionTitle {
   font-size: 20px;
   margin: 10px 0 30px;
+  @include laptop {
+    // font-size: 30px;
+    margin: 50px 20px 20px;
+  }
 }
 
 .partnersWrapper {
   display: grid;
-  margin: 0 auto 80px;
+  margin: 50px auto 80px;
 
   @media screen and (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
