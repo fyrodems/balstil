@@ -1,11 +1,15 @@
 {
   "metaData": {
     "homepage": {
-      "title": "Smart home, Lighting, Lamps, Smart buildings | YAK - Intelligent Devices and Smart Home | Smart-Home",
-      "description": "YAK - We make smart buildings live together with their users. Discover our capabilities in supporting building automation processes."
+      "title": "balstil",
+      "description": "balstil"
+     },
+    "contact": {
+      "title": "balstil",
+      "description": "balstil"
     }
   },
   "homepage": {
-    "test": "test en"
+    "test": "test pl"
   }
 }
