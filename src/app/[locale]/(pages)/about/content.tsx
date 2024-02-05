@@ -5,6 +5,7 @@ import { SectionFirst } from '@/components/about/SectionFirst/SectionFirst';
 import { SectionSecond } from '@/components/about/SectionSecond/SectionSecond';
 import styles from './about.module.scss';
 import { Attributes } from '@/components/about/Attributes/Attributes';
+import { Partners } from '@/components/about/Partners/Partners';
 
 export const Content: React.FC = () => {
   const t = useTranslations('homepage');
@@ -15,6 +16,7 @@ export const Content: React.FC = () => {
       <SectionFirst />
       <SectionSecond />
       <Attributes />
+      <Partners />
     </main>
   );
 };

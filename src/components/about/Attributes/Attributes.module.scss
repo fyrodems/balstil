@@ -10,6 +10,11 @@
   margin: 0 auto 80px;
   gap: 30px;
 
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1150px;
+  }
+
   .attribute {
     display: flex;
     flex-direction: column;
