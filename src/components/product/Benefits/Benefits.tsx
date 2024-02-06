@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/common/Button/Button';
 import Image from 'next/image';
 import styles from './Benefits.module.scss';
@@ -5,6 +7,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useRef } from 'react';
+import { isLargeDesktopWidth } from '@/utils/functions';
 
 export const Benefits = () => {
   const sliderRef = useRef<Slider>(null);
@@ -39,10 +42,14 @@ export const Benefits = () => {
         </div>
         <div className={styles.image}>
           <Image
-            src={'/assets/products/cylinde/half.png'}
+            src={
+              isLargeDesktopWidth()
+                ? '/assets/products/cylinde/half2.png'
+                : '/assets/products/cylinde/half.png'
+            }
             alt={''}
-            width={800}
-            height={300}
+            width={5000}
+            height={0}
           />
         </div>
       </div>

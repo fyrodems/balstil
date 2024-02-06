@@ -17,13 +17,48 @@
       width: fit-content;
     }
   }
+
+  /*   @include desktop {
+    h2 {
+      margin: 15px 20px;
+    }
+  } */
 }
 
 .firstSection {
+  @include tablet {
+    display: flex;
+  }
+
+  @include desktop {
+  }
+
+  @include desktop {
+    margin-left: 20px;
+  }
+
   .image {
     width: 90%;
     margin-right: -20px;
     float: right;
+
+    @include desktop {
+      margin-right: 0;
+
+      img {
+        margin-left: auto;
+      }
+    }
+
+    @media screen and (min-width: 1921px) {
+      
+    }
+  }
+  .content a {
+    @include tablet {
+      margin-right: auto;
+      margin-left: 0;
+    }
   }
 }
 

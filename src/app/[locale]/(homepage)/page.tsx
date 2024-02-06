@@ -15,7 +15,7 @@ export async function generateMetadata() {
 export default async function Homepage() {
   return (
     <>
-      <LanguageSelector />
+      {/* <LanguageSelector /> */}
       <MainBanner />
       <Content />
     </>

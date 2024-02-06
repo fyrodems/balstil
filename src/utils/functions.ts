@@ -6,9 +6,15 @@ export const isMobile = () => {
 };
 
 export const isMobileWidth = () => {
-  if (typeof window !== 'undefined') {
-    return window.innerWidth < 992;
-  }
+  // if (typeof window !== 'undefined') {
+  return window.innerWidth < 992;
+  // }
+};
+
+export const isLargeDesktopWidth = () => {
+  // if (typeof window !== 'undefined') {
+  return window.innerWidth > 1920;
+  // }
 };
 
 export const toggleState = (
