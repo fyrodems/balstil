@@ -93,7 +93,7 @@ export const Benefits = () => {
           <Image
             src={'/assets/products/cylinde/last.png'}
             alt={''}
-            width={800}
+            width={600}
             height={300}
           />
         </div>

@@ -72,7 +72,7 @@
   }
 
   .content h2 {
-    margin: 20px 8px;
+    margin: 12px 8px;
 
     @include desktop {
       margin: 20px 0;
@@ -81,7 +81,7 @@
 
   .content p {
     font-weight: 700;
-    margin: 20px 8px;
+    margin: 12px 8px;
 
     @include desktop {
       margin: 20px 0;
@@ -162,4 +162,18 @@
 }
 
 .thirdSection {
+  @include laptop {
+    display: grid;
+    grid-template-columns: 30% 50%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include desktop {
+    margin: -50px 20px 0;
+  }
+
+  img {
+    margin: 0 auto;
+  }
 }
