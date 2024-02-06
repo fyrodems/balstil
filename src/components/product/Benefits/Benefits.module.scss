@@ -18,7 +18,8 @@
     }
   }
 
-  /*   @include desktop {
+  /*   
+  @include desktop {
     h2 {
       margin: 15px 20px;
     }
@@ -28,9 +29,6 @@
 .firstSection {
   @include tablet {
     display: flex;
-  }
-
-  @include desktop {
   }
 
   @include desktop {
@@ -51,9 +49,9 @@
     }
 
     @media screen and (min-width: 1921px) {
-      
     }
   }
+
   .content a {
     @include tablet {
       margin-right: auto;
@@ -63,11 +61,41 @@
 }
 
 .secondSection {
+  @include laptop {
+    display: grid;
+    grid-template-columns: 30% 50%;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    margin: 20px;
+  }
+
+  .content h2 {
+    margin: 20px 8px;
+
+    @include desktop {
+      margin: 20px 0;
+    }
+  }
+
+  .content p {
+    font-weight: 700;
+    margin: 20px 8px;
+
+    @include desktop {
+      margin: 20px 0;
+    }
+  }
+
   .slick {
     @include limit-and-center(1700px);
     max-width: 1700px;
+    @include laptop {
+      width: 100%;
+    }
+
     [class='slick-list'] {
-      // margin: 0 20px;
       margin-bottom: 30px;
 
       @media screen and (min-width: 1151px) {
@@ -116,8 +144,19 @@
   }
 
   .product__wrapper {
+    margin-top: 20px;
+    h3 {
+      font-weight: 700;
+    }
+
+    span {
+      font-weight: 400;
+    }
+
     p {
       margin-bottom: 20px;
+      text-wrap: wrap;
+      font-weight: 100;
     }
   }
 }

@@ -41,16 +41,18 @@ export const Benefits = () => {
           <Button to={'/'} content={'Zobacz więcej'} />
         </div>
         <div className={styles.image}>
-          <Image
-            src={
-              isLargeDesktopWidth()
-                ? '/assets/products/cylinde/half2.png'
-                : '/assets/products/cylinde/half.png'
-            }
-            alt={''}
-            width={5000}
-            height={0}
-          />
+          {window && (
+            <Image
+              src={
+                isLargeDesktopWidth()
+                  ? '/assets/products/cylinde/half2.png'
+                  : '/assets/products/cylinde/half.png'
+              }
+              alt={''}
+              width={5000}
+              height={0}
+            />
+          )}
         </div>
       </div>
 

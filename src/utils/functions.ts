@@ -1,3 +1,5 @@
+'use client';
+
 export const isMobile = () => {
   const mobileRegex =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
@@ -12,9 +14,9 @@ export const isMobileWidth = () => {
 };
 
 export const isLargeDesktopWidth = () => {
-  // if (typeof window !== 'undefined') {
-  return window.innerWidth > 1920;
-  // }
+  if (typeof window !== 'undefined') {
+    return window.innerWidth > 1920;
+  }
 };
 
 export const toggleState = (
