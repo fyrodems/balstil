@@ -2,7 +2,6 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import styles from './Footer.module.scss';
-import Image from 'next/image';
 import Logotype from './Logotype/Logotype';
 import ContactInfo from './ContactInfo/ContactInfo';
 import Sitemap from './Sitemap/Sitemap';
@@ -14,10 +13,16 @@ export const Footer = () => {
 
   return (
     <footer className={styles.footerWrapper}>
+      <div>
       <Logotype />
-      <ContactInfo />
-      <Sitemap />
+      <div className={styles.mainContent}>
+        <ContactInfo />
+        <Sitemap />
+      </div>
+
       <BottomLinks />
+      </div>
+      
     </footer>
   );
 };
