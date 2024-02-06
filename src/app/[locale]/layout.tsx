@@ -6,12 +6,12 @@ import classNames from 'classnames';
 import 'normalize.css/normalize.css';
 import '../tailwindGlobals.css';
 import '../styles/globals.scss';
-
 import { Footer } from '@/components/layout/Footer';
+import { Navbar } from '@/components/layout/Navbar/Navbar';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
-export async function generateMetadata() {
+async function generateMetadata() {
   const t = await getTranslations('metaData.homepage');
 
   return {
@@ -36,6 +36,7 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang={locale}>
       <body className={classNames(montserrat.className, 'bg-light-bg')}>
+        <Navbar />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

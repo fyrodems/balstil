@@ -6,7 +6,9 @@ export const isMobile = () => {
 };
 
 export const isMobileWidth = () => {
-  return window.innerWidth < 992;
+  if (typeof window !== 'undefined') {
+    return window.innerWidth < 992;
+  }
 };
 
 export const toggleState = (

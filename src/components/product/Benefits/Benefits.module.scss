@@ -47,20 +47,33 @@
     }
 
     [class='slick-dots'] {
-      margin-top: 15px;
+      margin: 15px auto 0;
       padding-top: 15px;
+      display: flex !important;
+      justify-content: center;
+
       li button:before {
+        content: '';
         width: 15px;
         height: 15px;
-        font-size: 15px;
         transition: 200ms;
+        background-color: gray;
+        border-radius: 50%;
       }
+
       li button:hover:before {
-        color: $mainColor;
+        background-color: $mainColor;
+      }
+
+      [class='slick-active'] {
+        margin-right: 30px;
       }
 
       li[class='slick-active'] button:before {
-        color: $mainColor;
+        background-color: $mainColor;
+        width: 200%;
+        border-radius: 16px;
+        content: '';
       }
     }
     @include laptop {
