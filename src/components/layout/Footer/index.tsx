@@ -17,12 +17,12 @@ export const Footer = () => {
       <Logotype />
       <div className={styles.mainContent}>
         <ContactInfo />
+        <div className={styles.decoration} />
         <Sitemap />
       </div>
 
       <BottomLinks />
       </div>
-      
     </footer>
   );
 };
