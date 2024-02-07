@@ -14,14 +14,13 @@ export const Footer = () => {
   return (
     <footer className={styles.footerWrapper}>
       <div>
-      <Logotype />
-      <div className={styles.mainContent}>
-        <ContactInfo />
-        <div className={styles.decoration} />
-        <Sitemap />
-      </div>
-
-      <BottomLinks />
+        <Logotype />
+        <div className={styles.mainContent}>
+          <ContactInfo />
+          <div className={styles.decoration} />
+          <Sitemap />
+        </div>
+        <BottomLinks />
       </div>
     </footer>
   );
