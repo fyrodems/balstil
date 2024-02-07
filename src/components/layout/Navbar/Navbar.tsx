@@ -1,72 +1,17 @@
 'use client';
 
-// import { useState } from 'react';
-// import styles from './Navbar.module.scss';
-// import Image from 'next/image';
-// import { Link } from '@/navigation';
-// import { Hamburger } from '../Hamburger/Hamburger';
-
-// export const Navbar = () => {
-//   const [expanded, setExpanded] = useState(false);
-
-//   const toggleNavbar = () => {
-//     setExpanded(!expanded);
-//   };
-
-//   return (
-//     <nav className={styles.navbar}>
-//       <div className={styles.navbarBrand}>
-//         <Hamburger />
-// <Link href="/">
-//   <Image width={180} height={40} src={'/assets/logo.png'} alt="" />
-// </Link>
-//       </div>
-//       {/* <button className={styles.navbarToggler} onClick={toggleNavbar}>
-//         <span></span>
-//         <span></span>
-//         <span></span>
-//       </button> */}
-//       <div
-//         className={`${styles.navbarCollapse} ${expanded ? styles.show : ''}`}
-//       >
-//         {/* <ul className={styles.navbarNav}>
-//           <li className={styles.navItem}>
-//             <Link href="#category1">Kategoria 1</Link>
-//           </li>
-//           <li className={styles.navItem}>
-//             <Link href="#category2">Kategoria 2</Link>
-//           </li>
-//           <li className={styles.navItem}>
-//             <Link href="#category3">Kategoria 3</Link>
-//           </li>
-//           <li className={styles.navItem}>
-//             <Link href="#category4">Kategoria 4</Link>
-//           </li>
-//           <li className={styles.navItem}>
-//             <Link href="#profile">Mój profil</Link>
-//           </li>
-//           <li className={styles.navItem}>
-//             <Link href="#orders">Zamówienia</Link>
-//           </li>
-//         </ul> */}
-//       </div>
-//     </nav>
-//   );
-// };
-
-import { useState, useEffect, useRef, type MouseEvent } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './Navbar.module.scss';
 import { isMobileWidth } from '@/utils/functions';
 import { Hamburger } from '../Hamburger/Hamburger';
 import { Link } from '@/navigation';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
-import { Button } from '@/components/common/Button/Button';
 
 export const Navbar: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const locale = useLocale();
+  const locale = useLocale() as 'en' | 'pl' | undefined;
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -87,13 +32,13 @@ export const Navbar: React.FC = () => {
 
   const mobileNavBar = (
     <>
-      <div className={`${styles.headerContainer} ${styles.headerBg}`}>
+      <div className={styles.headerContainer}>
         <Hamburger
           setDropdownOpen={setDropdownOpen}
           isDropdownOpen={isDropdownOpen}
         />
         <Link href="/">
-          <Image width={180} height={40} src={'/assets/logo.png'} alt="" />
+          <Image width={160} height={40} src={'/assets/logo.png'} alt="" />
         </Link>
         <div className={styles.healper}></div>
       </div>
@@ -105,15 +50,24 @@ export const Navbar: React.FC = () => {
                 O nas
               </Link>
             </li>
+            <li>
+              <Link locale={locale} href={`/product`}>
+                Przykładowy produkt
+              </Link>
+            </li>
+            <li>
+              <Link locale={locale} href={`/404`}>
+                Strona 404
+              </Link>
+            </li>
           </ul>
-          <Button to="/login" content="Zaloguj się" className={styles.button} />
         </nav>
       )}
     </>
   );
 
   const desktopNavBar = (
-    <div className={`${styles.headerContainer} ${styles.headerBg}`}>
+    <div className={styles.headerContainer}>
       <Link href="/">
         <Image width={180} height={40} src={'/assets/logo.png'} alt="" />
       </Link>
@@ -124,8 +78,25 @@ export const Navbar: React.FC = () => {
               O nas
             </Link>
           </li>
+          <li>
+            <Link locale={locale} href={`/product`}>
+              Przykładowy produkt
+            </Link>
+          </li>
+          <li>
+            <Link locale={locale} href={`/404`}>
+              Strona 404
+            </Link>
+          </li>
         </ul>
       </nav>
+      <Image
+        width={80}
+        height={40}
+        src={'/assets/navbar/menuIcons.png'}
+        alt=""
+        style={{ cursor: 'not-allowed' }}
+      />
     </div>
   );
 

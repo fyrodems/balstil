@@ -1,20 +1,22 @@
 @import '@/app/styles/mixins';
 
-.headerBg {
-  // background: $bg-header;
-  // background-color: white;
-}
-
 .headerContainer {
   @include flex-custom(row, space-between, center);
-  height: 60px;
-  padding: 0 30px;
-  // position: absolute;
+  height: 80px;
+  padding: 10px 30px;
   top: 0;
+  width: 100%;
+  position: absolute;
+  background: transparent;
 
   .healper,
   [class*='hamburger-react'] {
     width: 48px !important;
+  }
+
+  @include laptop {
+    padding-left: 130px;
+    padding-right: 130px;
   }
 }
 
@@ -23,6 +25,9 @@
   position: absolute;
   width: 100%;
   z-index: 3;
+  top: 50px;
+  background-color: white;
+  width: fit-content;
 
   ul {
     @include flex-column;
@@ -36,7 +41,6 @@
   .button {
     font-size: unset;
     border-radius: 80px;
-    // border: 2px solid $BAL-main-color;
     margin: 15px 0;
     padding: 5px 10px;
     @include flex-center;
@@ -46,21 +50,7 @@
 .desktopNavigation {
   ul {
     @include flex-center;
-    gap: 30px;
-  }
-
-  li {
-    // @include flex-center;
-    // height: 25px;
-    // gap: 10px;
-
-    // &::before {
-    //   @include pseudo;
-    //   position: static;
-    //   height: 100%;
-    //   width: 5px;
-    //   background: $BAL-main-color;
-    // }
+    gap: 60px;
   }
 
   li {
