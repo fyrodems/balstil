@@ -6,7 +6,7 @@
   background: linear-gradient(295deg, #fff 0%, #727272 100%);
   border-radius: 0px 0px 0px 42px;
   color: themes.$white;
-  padding: 50px 20px 70px;
+  padding: 75px 30px 70px;
 
   > div {
     max-width: 1600px;
@@ -18,18 +18,22 @@
   }
 
   @include tablet {
+    padding-top: 40px;
     height: 1000px;
   }
 
   @include laptop {
-    margin-left: 70px;
-    padding: 60px;
-    padding-top: 1px;
-    height: 730px;
+    margin-left: 100px;
+    padding: 30px;
+    padding-top: 30px;
+    padding-right: 60px;
+    height: 750px;
   }
 
   @include desktop {
-    height: 900px;
+    height: 850px;
+    padding-top: 1px;
+
   }
 
   h1 {
@@ -47,7 +51,7 @@
     }
 
     @include desktop {
-      margin-top: 300px;
+      margin-top: 270px;
       font-size: 75px;
       max-width: 450px;
       line-height: 80px;
