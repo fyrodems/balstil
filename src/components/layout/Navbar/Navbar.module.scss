@@ -55,7 +55,20 @@
 
   li {
     position: relative;
+    transition: 250ms;
+    background: transparent;
+    // border-radius: 0;
+    padding: 0;
+    color: #000;
   }
+
+  .selectedMenuItem {
+    background: #af8e6d;
+    border-radius: 26px;
+    padding: 5px 25px;
+    color: white;
+  }
+
   li:hover a {
     // color: $BAL-main-color;
   }

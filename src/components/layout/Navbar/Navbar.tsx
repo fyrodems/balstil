@@ -7,11 +7,13 @@ import { Hamburger } from '../Hamburger/Hamburger';
 import { Link } from '@/navigation';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export const Navbar: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const locale = useLocale() as 'en' | 'pl' | undefined;
+  const pathname = usePathname();
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -73,17 +75,27 @@ export const Navbar: React.FC = () => {
       </Link>
       <nav className={`${styles.desktopNavigation}`}>
         <ul>
-          <li>
+          <li
+            className={
+              pathname.includes('/about') ? styles.selectedMenuItem : ''
+            }
+          >
             <Link locale={locale} href={`/about`}>
               O nas
             </Link>
           </li>
-          <li>
+          <li
+            className={
+              pathname.includes('/product') ? styles.selectedMenuItem : ''
+            }
+          >
             <Link locale={locale} href={`/product`}>
               Przykładowy produkt
             </Link>
           </li>
-          <li>
+          <li
+            className={pathname.includes('/404') ? styles.selectedMenuItem : ''}
+          >
             <Link locale={locale} href={`/404`}>
               Strona 404
             </Link>

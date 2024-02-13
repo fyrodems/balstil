@@ -8,7 +8,6 @@ import '../tailwindGlobals.css';
 import '../styles/globals.scss';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar/Navbar';
-import { useRouter } from 'next/navigation';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
