@@ -14,6 +14,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
     "hamburger-react": "^2.5.0",
+    "lucide-react": "^0.330.0",
     "next": "14.0.3",
     "next-intl": "^3.2.0",
     "normalize.css": "^8.0.1",
