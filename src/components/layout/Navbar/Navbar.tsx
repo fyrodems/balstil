@@ -9,7 +9,14 @@ import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import useWindowDimensions from '@/utils/useWindowDimensions';
-import { ChevronDown, Inbox, Settings, HelpCircle, LogOut } from 'lucide-react';
+import {
+  ChevronDown,
+  Inbox,
+  Settings,
+  HelpCircle,
+  LogOut,
+  ChevronLeft,
+} from 'lucide-react';
 import classNames from 'classnames';
 
 export const Navbar: React.FC = () => {
@@ -17,7 +24,7 @@ export const Navbar: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const locale = useLocale() as 'en' | 'pl' | undefined;
   const pathname = usePathname();
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -39,22 +46,25 @@ export const Navbar: React.FC = () => {
   const mobileNavBar = (
     <>
       <div className={styles.headerContainer}>
-        <Hamburger
-          setDropdownOpen={setDropdownOpen}
-          isDropdownOpen={isDropdownOpen}
-        />
+        <div className={styles.outerHamburger}>
+          <Image
+            width={32}
+            height={40}
+            src={'/assets/navbar/burger.png'}
+            alt=""
+            onClick={() => setDropdownOpen(true)}
+          />
+        </div>
+
         <Link href="/">
           <Image width={160} height={40} src={'/assets/logo.png'} alt="" />
         </Link>
-        <div className={styles.healper}></div>
+        <div className={styles.healper} />
       </div>
       {isDropdownOpen && (
-        <nav className={styles.mobileNavigation}>
+        <nav className={styles.burgerNavigation}>
           <div className={styles.innerHamburger}>
-            <Hamburger
-              setDropdownOpen={setDropdownOpen}
-              isDropdownOpen={isDropdownOpen}
-            />
+            <ChevronLeft size={28} onClick={() => setDropdownOpen(false)} />
           </div>
 
           <div className={styles.upperContainer}>
@@ -129,35 +139,75 @@ export const Navbar: React.FC = () => {
 
   const desktopNavBar = (
     <div className={styles.headerContainer}>
-      <Hamburger
-        setDropdownOpen={setDropdownOpen}
-        isDropdownOpen={isDropdownOpen}
-      />
+      <div className={styles.outerHamburger}>
+        <Image
+          width={26}
+          height={40}
+          src={'/assets/navbar/burger.png'}
+          alt=""
+          onClick={() => setDropdownOpen(true)}
+        />
+      </div>
+
+      {isDropdownOpen && (
+        <nav className={styles.burgerNavigation}>
+          <div className={styles.innerHamburger}>
+            <ChevronLeft size={28} onClick={() => setDropdownOpen(false)} />
+          </div>
+
+          <div className={styles.upperContainer}>
+            <Link href="/">
+              <Image width={160} height={40} src={'/assets/logo.png'} alt="" />
+            </Link>
+
+            <div className={styles.menuLinks}>
+              <div className={styles.disabled}>
+                <h2>Mój profil</h2>
+                <ul>
+                  <li>
+                    <Inbox size={18} />
+                    <Link locale={locale} href={`#`}>
+                      Zamówienia
+                    </Link>
+                    <ChevronDown />
+                  </li>
+                  <li>
+                    <Settings size={18} />
+
+                    <Link locale={locale} href={`#`}>
+                      Ustawienia
+                    </Link>
+                    <ChevronDown />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className={classNames(styles.disabled, styles.bottomContainer)}>
+            <ul>
+              <li>
+                <HelpCircle size={18} />
+                <Link locale={locale} href={`#`}>
+                  Pomoc
+                </Link>
+              </li>
+              <li>
+                <LogOut size={18} />
+                <Link locale={locale} href={`#`}>
+                  Wyloguj
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      )}
+
       <Link href="/">
         <Image width={180} height={40} src={'/assets/logo.png'} alt="" />
       </Link>
-      {isDropdownOpen && (
-        <nav className={`${styles.mobileNavigation} ${styles.headerBg}`}>
-          <ul>
-            <li>
-              <Link locale={locale} href={`/about`}>
-                O nas
-              </Link>
-            </li>
-            <li>
-              <Link locale={locale} href={`/product`}>
-                Przykładowy produkt
-              </Link>
-            </li>
-            <li>
-              <Link locale={locale} href={`/404`}>
-                Strona 404
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      )}
-      <nav className={`${styles.desktopNavigation}`}>
+
+      <nav className={styles.desktopNavigation}>
         <ul>
           <li
             className={

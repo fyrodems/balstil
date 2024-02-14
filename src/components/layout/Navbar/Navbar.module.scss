@@ -10,8 +10,8 @@
   background: transparent;
 
   .healper,
-  [class*='hamburger-react'] {
-    width: 48px !important;
+  .outerHamburger {
+    width: 32px !important;
   }
 
   @include laptop {
@@ -20,7 +20,14 @@
   }
 }
 
-.mobileNavigation {
+.outerHamburger,
+.innerHamburger {
+  cursor: pointer;
+}
+
+/* mobile */
+
+.burgerNavigation {
   padding: 0 20px;
   position: fixed;
   width: 100%;
@@ -40,16 +47,18 @@
   padding: 26px;
 
   .innerHamburger {
+    cursor: pointer;
     position: absolute;
     top: 30px;
     right: -20px;
     display: flex;
-    padding: 6px;
     align-items: flex-start;
+    padding: 6px;
     gap: 8px;
     border-radius: 8px;
     border: 1px solid #f6f6f6;
     background: #f7f6f8;
+    color: #af8e6d;
   }
 
   h2 {
@@ -71,7 +80,6 @@
 
   .menuLinks,
   .disabled {
-
     ul {
       @include flex-column;
 
@@ -104,6 +112,15 @@
   }
 }
 
+/* desktop */
+
+.headerContainer > div {
+  @include laptop {
+    position: absolute !important;
+    left: 24px;
+  }
+}
+
 .desktopNavigation {
   ul {
     @include flex-center;
@@ -114,7 +131,6 @@
     position: relative;
     transition: 250ms;
     background: transparent;
-    // border-radius: 0;
     padding: 0;
     color: #000;
   }
@@ -124,9 +140,5 @@
     border-radius: 26px;
     padding: 5px 25px;
     color: white;
-  }
-
-  li:hover a {
-    // color: $BAL-main-color;
   }
 }
