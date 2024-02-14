@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import styles from './Navbar.module.scss';
-// import { isMobileWidth } from '@/utils/functions';
-import { Hamburger } from '../Hamburger/Hamburger';
 import { Link } from '@/navigation';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
