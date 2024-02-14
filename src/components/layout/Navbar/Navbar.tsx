@@ -9,9 +9,11 @@ import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import useWindowDimensions from '@/utils/useWindowDimensions';
+import { ChevronDown, Inbox, Settings, HelpCircle, LogOut } from 'lucide-react';
+import classNames from 'classnames';
 
 export const Navbar: React.FC = () => {
-  const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [isDropdownOpen, setDropdownOpen] = useState<boolean>(true);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const locale = useLocale() as 'en' | 'pl' | undefined;
   const pathname = usePathname();
@@ -81,34 +83,41 @@ export const Navbar: React.FC = () => {
                   </li>
                 </ul>
               </div>
-              <div>
+              <div className={styles.disabled}>
                 <h2>Mój profil</h2>
                 <ul>
                   <li>
+                    <Inbox size={18} />
                     <Link locale={locale} href={`#`}>
                       Zamówienia
                     </Link>
+                    <ChevronDown />
                   </li>
                   <li>
+                    <Settings size={18} />
+
                     <Link locale={locale} href={`#`}>
                       Ustawienia
                     </Link>
+                    <ChevronDown />
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div>
+          <div className={classNames(styles.disabled, styles.bottomContainer)}>
             <ul>
               <li>
+                <HelpCircle size={18} />
                 <Link locale={locale} href={`#`}>
-                  Zamówienia
+                  Pomoc
                 </Link>
               </li>
               <li>
+                <LogOut size={18} />
                 <Link locale={locale} href={`#`}>
-                  Ustawienia
+                  Wyloguj
                 </Link>
               </li>
             </ul>

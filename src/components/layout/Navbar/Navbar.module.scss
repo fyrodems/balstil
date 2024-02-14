@@ -22,28 +22,85 @@
 
 .mobileNavigation {
   padding: 0 20px;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  z-index: 3;
-  top: 50px;
-  background-color: white;
-  width: fit-content;
+  z-index: 501;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-width: 300px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 26px;
 
-  ul {
-    @include flex-column;
+  .innerHamburger {
+    position: absolute;
+    top: 30px;
+    right: -20px;
+    display: flex;
+    padding: 6px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid #f6f6f6;
+    background: #f7f6f8;
+  }
 
-    li {
-      margin: 5px;
-      font-weight: 500;
+  h2 {
+    display: flex;
+    padding: 10px 12px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-bottom: 2px solid rgba(64, 67, 84, 0.1);
+    margin-top: 22px;
+    font-weight: 700;
+  }
+
+  .upperContainer {
+    img {
+      width: 120px;
     }
   }
 
-  .button {
-    font-size: unset;
-    border-radius: 80px;
-    margin: 15px 0;
-    padding: 5px 10px;
-    @include flex-center;
+  .menuLinks,
+  .disabled {
+
+    ul {
+      @include flex-column;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        padding: 10px 12px;
+        color: #af8e6d;
+
+        :nth-child(3) {
+          align-self: flex-end;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  .disabled {
+    li,
+    a {
+      cursor: not-allowed;
+    }
+
+    &.bottomContainer {
+      li:last-of-type {
+        color: #000;
+      }
+    }
   }
 }
 
@@ -72,22 +129,4 @@
   li:hover a {
     // color: $BAL-main-color;
   }
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #000;
-  position: absolute;
-  top: 0;
-  background-color: transparent;
-  z-index: 1000;
-  padding-top: 1rem;
-}
-
-.navbarBrand {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #000;
 }
