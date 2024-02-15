@@ -1,12 +1,24 @@
 {
   "metaData": {
     "homepage": {
-      "title": "balstil",
-      "description": "balstil"
+      "title": "Innowacyjne kominki - Najwyższa jakość i nowoczesny design | BALSTIL",
+      "description": "Dowiedz się więcej o najnowszych zastosowaniach kominków oraz odkryj naszą szeroką ofertę. Sprawdź dlaczego warto wybrać nasze produkty!"
      },
+     "about": {
+      "title": " Nasza historia i wartości | BALSTIL",
+      "description": "Dowiedz się więcej o naszej historii oraz wartościach. Odkryj, dlaczego warto wybrać nasze produkty!"
+    },
+    "product": {
+      "title": "Innowacyjne kominki - Najwyższa jakość i nowoczesny design | BALSTIL",
+      "description": "Odkryj wyjątkowe kominki zaprojektowane z myślą o elegancji i funkcjonalności."
+    },
+    "404": {
+      "title": "Nie znaleziono strony | BALSTIL",
+      "description": "Ups! Wygląda na to, że zgubiłeś się w płomieniach i dymie. Wróć na stronę główną."
+    },
     "contact": {
-      "title": "balstil",
-      "description": "balstil"
+      "title": "Kontakt | BALSTIL",
+      "description": "Skontaktuj się z nami!"
     }
   },
   "homepage": {

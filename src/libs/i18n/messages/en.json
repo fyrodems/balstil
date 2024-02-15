@@ -1,15 +1,27 @@
 {
   "metaData": {
     "homepage": {
-      "title": "balstil",
-      "description": "balstil"
-     },
+      "title": "Innovative Fireplaces - Highest Quality and Modern Design | BALSTIL",
+      "description": "Learn more about the latest applications of our fireplaces and discover our wide range of offerings. Find out why our products are worth choosing!"
+    },
+    "about": {
+      "title": "Our History and Values | BALSTIL",
+      "description": "Learn more about our history and values. Discover why our products are worth choosing!"
+    },
+    "product": {
+      "title": "Innovative Fireplaces - Highest Quality and Modern Design | BALSTIL",
+      "description": "Discover unique fireplaces designed with elegance and functionality in mind."
+    },
+    "404": {
+      "title": "Page Not Found | BALSTIL",
+      "description": "Oops! Looks like you've gotten lost in flames and smoke. Return to the homepage."
+    },
     "contact": {
-      "title": "balstil",
-      "description": "balstil"
+      "title": "Contact Us | BALSTIL",
+      "description": "Get in touch with us!"
     }
   },
   "homepage": {
-    "test": "test pl"
+    "test": "test en"
   }
 }

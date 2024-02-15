@@ -3,7 +3,7 @@ import { Content } from './content';
 import { PageTitle } from '@/components/common/PageTitle/PageTitle';
 
 export async function generateMetadata() {
-  const t = await getTranslations('metaData.contact');
+  const t = await getTranslations('metaData.about');
 
   return {
     title: t('title'),
