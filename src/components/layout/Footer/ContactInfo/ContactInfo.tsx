@@ -12,15 +12,24 @@ const ContactInfo = () => {
       <div className={styles.contactInfo}>
         <div>
           <img src="/assets/footer/phoneIcon.svg" alt="" />
-          <span>310-437-2766</span>
+          <a target="_blank" href="tel:310-437-2766">
+            310-437-2766
+          </a>
         </div>
         <div>
           <img src="/assets/footer/mapIcon.svg" alt="" />
-          <span>706 Campfre Ave. Meriden, CT 06450</span>
+          <a
+            target="_blank"
+            href="https://www.google.com/maps?q=706+Campfre+Ave.+Meriden,+CT+06450"
+          >
+            706 Campfre Ave. Meriden, CT 06450
+          </a>
         </div>
         <div>
           <img src="/assets/footer/mailIcon.svg" alt="" />
-          <span>unreal@outlook.com</span>
+          <a target="_blank" href="mailto:unreal@outlook.com">
+            unreal@outlook.com
+          </a>
         </div>
       </div>
     </div>
