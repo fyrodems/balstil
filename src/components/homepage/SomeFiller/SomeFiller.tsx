@@ -12,7 +12,7 @@ export const SomeFiller = () => {
       }
     };
 
-    handleResize(); // Sprawdzanie szerokości okna przy pierwszym renderowaniu
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 

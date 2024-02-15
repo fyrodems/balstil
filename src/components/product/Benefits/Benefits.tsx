@@ -7,10 +7,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useRef } from 'react';
-import { isLargeDesktopWidth } from '@/utils/functions';
+import useWindowDimensions from '@/utils/useWindowDimensions';
 
 export const Benefits = () => {
   const sliderRef = useRef<Slider>(null);
+  const { width } = useWindowDimensions();
 
   const settings = {
     dots: true,
@@ -41,18 +42,16 @@ export const Benefits = () => {
           <Button to={'/'} content={'Zobacz więcej'} />
         </div>
         <div className={styles.image}>
-          {window && (
-            <Image
-              src={
-                isLargeDesktopWidth()
-                  ? '/assets/products/cylinde/half2.png'
-                  : '/assets/products/cylinde/half.png'
-              }
-              alt={''}
-              width={5000}
-              height={0}
-            />
-          )}
+          <Image
+            src={
+              width && width < 1920
+                ? '/assets/products/cylinde/half2.png'
+                : '/assets/products/cylinde/half.png'
+            }
+            alt={''}
+            width={5000}
+            height={0}
+          />
         </div>
       </div>
 

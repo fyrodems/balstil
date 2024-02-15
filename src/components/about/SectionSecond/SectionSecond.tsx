@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import styles from './SectionSecond.module.scss';
-import { isMobileWidth } from '@/utils/functions';
+import useWindowDimensions from '@/utils/useWindowDimensions';
 
 export const SectionSecond = () => {
+  const { width } = useWindowDimensions();
+
   return (
     <div className={styles.sectionWrapper}>
       <div>
         <Image
           src={
-            isMobileWidth()
+            width && width < 992
               ? '/assets/about/onas2.png'
               : '/assets/about/onas2-desktop.png'
           }
