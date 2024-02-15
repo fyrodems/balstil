@@ -1,6 +1,7 @@
 import { Button } from '@/components/common/Button/Button';
 import styles from './Portfolio.module.scss';
 import { Link } from '@/navigation';
+import Image from 'next/image';
 
 export const Portfolio = () => {
   return (
@@ -12,19 +13,23 @@ export const Portfolio = () => {
         </p>
         <Button to="#" content="Szczegóły" className={styles.CTA} />
       </div>
-      <Link className={styles.gallery} href="#">
+      <div className={styles.gallery}>
         <Button
           to="#"
           className={styles.galleryButton}
           content="KOMINEK"
           type="tertiary"
         />
-        <img
-          src="/assets/portfolio/mainPortfolioImage.png"
-          className={styles.image}
-          alt="kominek"
-        />
-      </Link>
+        <Link href="#">
+          <Image
+            width={3000}
+            height={0}
+            src="/assets/portfolio/mainPortfolioImage.png"
+            className={styles.image}
+            alt="kominek"
+          />
+        </Link>
+      </div>
     </div>
   );
 };
