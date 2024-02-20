@@ -17,6 +17,8 @@
 
   @include laptop {
     transform: translateY(-300px);
+    transform: translateY(-450px);
+
   }
 
   @include desktop {
@@ -25,7 +27,8 @@
   }
 
   @include desktop-large {
-    transform: translateY(-565px);
+    // transform: translateY(-565px);
+    transform: translateY(-525px);
   }
 }
 
