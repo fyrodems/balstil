@@ -44,7 +44,7 @@ export const Benefits = () => {
         <div className={styles.image}>
           <Image
             src={
-              width && width < 1920
+              width && width > 1920
                 ? '/assets/products/cylinde/half2.png'
                 : '/assets/products/cylinde/half.png'
             }
