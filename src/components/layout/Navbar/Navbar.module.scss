@@ -41,6 +41,7 @@
   border-bottom-right-radius: 12px;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   background: #fff;
+  background-color: rgb(254 247 255);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -65,9 +66,11 @@
     padding: 6px;
     gap: 8px;
     border-radius: 8px;
-    border: 1px solid #f6f6f6;
-    background: #f7f6f8;
-    color: #af8e6d;
+    // border: 1px solid #f6f6f6;
+    // background: #f7f6f8;
+    // color: #af8e6d;
+    background-color: #af8e6d;
+    color: #f7f6f8;
   }
 
   h2 {

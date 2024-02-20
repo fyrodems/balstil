@@ -47,7 +47,8 @@ const config: Config = {
       },
       colors: {
         'main-color': '#AF8E6D',
-        'light-bg': '#FEF7FF',
+        'light-bg': 'rgb(254 247 255)',
+        'button-bg': 'rgb(250 244 255)',
         black: 'hsl(0, 0%, 12%)',
         white: 'hsl(0, 0%, 100%)',
         whiteOpacity: 'hsla(0, 0%, 100%, 0.6)',
