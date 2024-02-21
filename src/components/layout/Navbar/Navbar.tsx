@@ -88,11 +88,6 @@ export const Navbar: React.FC = () => {
                     Przykładowy produkt
                   </Link>
                 </li>
-                <li>
-                  <Link locale={locale} href={`/404`}>
-                    Strona 404
-                  </Link>
-                </li>
               </ul>
             </div>
             <div className={styles.disabled}>
@@ -229,13 +224,6 @@ export const Navbar: React.FC = () => {
           >
             <Link locale={locale} href={`/product`}>
               Przykładowy produkt
-            </Link>
-          </li>
-          <li
-            className={pathname.includes('/404') ? styles.selectedMenuItem : ''}
-          >
-            <Link locale={locale} href={`/404`}>
-              Strona 404
             </Link>
           </li>
         </ul>
