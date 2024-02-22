@@ -14,9 +14,9 @@ export default function NotFoundPage() {
       <div className={styles.content}>
         <h2>Ups!</h2>
         <p>
-          Wygląda na to, że zgubiłeś się w płomieniach i dymie. <br /> Strona,
-          której szukasz, niestety, jest jak dym <br /> z kominka - gdzieś się
-          ulatuje!
+          Wygląda na to, że zgubiłeś się w płomieniach i dymie.
+          <br />
+          Strona, której szukasz, niestety gdzieś się ulotniła!
         </p>
         <div className={styles.buttonWrapper}>
           <Button to="/" content="Wróć na stronę główną" />
