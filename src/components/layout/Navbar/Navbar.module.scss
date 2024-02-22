@@ -1,7 +1,12 @@
 @import '@/app/styles/mixins';
 
+.header {
+  @include limit-and-center(1830px);
+}
+
 .headerContainer {
   @include flex-custom(row, space-between, center);
+  @include limit-and-center(1850px);
   height: 80px;
   padding: 10px 30px;
   top: 0;
@@ -15,10 +20,10 @@
     width: 32px !important;
   }
 
-  @include laptop {
-    padding-left: 130px;
-    padding-right: 130px;
-  }
+  // @include laptop {
+  //   padding-left: 130px;
+  //   padding-right: 130px;
+  // }
 }
 
 .outerHamburger,
@@ -67,9 +72,6 @@
     padding: 6px;
     gap: 8px;
     border-radius: 8px;
-    // border: 1px solid #f6f6f6;
-    // background: #f7f6f8;
-    // color: #af8e6d;
     background-color: #af8e6d;
     color: #f7f6f8;
   }
@@ -127,10 +129,22 @@
 
 /* desktop */
 
-.headerContainer > div {
-  @include laptop {
-    position: absolute !important;
-    left: 24px;
+.header {
+  &.home {
+    @include limit-and-center(1600px);
+  }
+
+  .headerContainer.home {
+    @include limit-and-center(1650px);
+  }
+
+  > .outerHamburger {
+    @include laptop {
+      position: absolute;
+      left: 40px;
+      top: 32px;
+      z-index: 20;
+    }
   }
 }
 

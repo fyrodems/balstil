@@ -1,12 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import styles from './Navbar.module.scss';
-import { Link } from '@/navigation';
 import Image from 'next/image';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import useWindowDimensions from '@/utils/useWindowDimensions';
 import {
   ChevronDown,
   Inbox,
@@ -16,11 +13,14 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 import classNames from 'classnames';
+import styles from './Navbar.module.scss';
+import { Link } from '@/navigation';
+import useWindowDimensions from '@/utils/useWindowDimensions';
 import useLocation from '@/utils/useLocation';
 
 export const Navbar: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const dropdownReference = useRef<HTMLDivElement | null>(null);
   const locale = useLocale() as 'en' | 'pl' | undefined;
   const pathname = usePathname();
   const { width } = useWindowDimensions();
@@ -28,8 +28,8 @@ export const Navbar: React.FC = () => {
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
+      dropdownReference.current &&
+      !dropdownReference.current.contains(event.target as Node)
     ) {
       setDropdownOpen(false);
     }
@@ -55,7 +55,7 @@ export const Navbar: React.FC = () => {
                 ? '/assets/navbar/white/burger.svg'
                 : '/assets/navbar/dark/burger.svg'
             }
-            alt=""
+            alt="hamburger"
             onClick={() => setDropdownOpen(true)}
           />
         </div>
@@ -74,6 +74,7 @@ export const Navbar: React.FC = () => {
         </Link>
         <div className={styles.healper} />
       </div>
+
       <nav
         className={classNames(
           styles.burgerNavigation,
@@ -154,7 +155,7 @@ export const Navbar: React.FC = () => {
   );
 
   const desktopNavBar = (
-    <div className={styles.headerContainer}>
+    <>
       <div className={styles.outerHamburger}>
         <Image
           width={26}
@@ -165,124 +166,133 @@ export const Navbar: React.FC = () => {
               : '/assets/navbar/dark/burger.svg'
           }
           className={styles.burger}
-          alt=""
+          alt="hamburger"
           onClick={() => setDropdownOpen(true)}
         />
       </div>
 
-      <nav
+      <div
         className={classNames(
-          styles.burgerNavigation,
-          isDropdownOpen ? styles.open : ''
+          styles.headerContainer,
+          isHome ? styles.home : ''
         )}
       >
-        <div className={styles.innerHamburger}>
-          <ChevronLeft size={28} onClick={() => setDropdownOpen(false)} />
-        </div>
+        <nav
+          className={classNames(
+            styles.burgerNavigation,
+            isDropdownOpen ? styles.open : ''
+          )}
+        >
+          <div className={styles.innerHamburger}>
+            <ChevronLeft size={28} onClick={() => setDropdownOpen(false)} />
+          </div>
 
-        <div className={styles.upperContainer}>
-          <Link href="/">
-            <Image
-              width={160}
-              height={40}
-              src={'/assets/navbar/dark/logo.svg'}
-              alt=""
-            />
-          </Link>
+          <div className={styles.upperContainer}>
+            <Link href="/">
+              <Image
+                width={160}
+                height={40}
+                src={'/assets/navbar/dark/logo.svg'}
+                alt=""
+              />
+            </Link>
 
-          <div className={styles.menuLinks}>
-            <div className={styles.disabled}>
-              <h2>Mój profil</h2>
-              <ul>
-                <li>
-                  <Inbox size={18} />
-                  <Link locale={locale} href={`#`}>
-                    Zamówienia
-                  </Link>
-                  <ChevronDown />
-                </li>
-                <li>
-                  <Settings size={18} />
+            <div className={styles.menuLinks}>
+              <div className={styles.disabled}>
+                <h2>Mój profil</h2>
+                <ul>
+                  <li>
+                    <Inbox size={18} />
+                    <Link locale={locale} href={`#`}>
+                      Zamówienia
+                    </Link>
+                    <ChevronDown />
+                  </li>
+                  <li>
+                    <Settings size={18} />
 
-                  <Link locale={locale} href={`#`}>
-                    Ustawienia
-                  </Link>
-                  <ChevronDown />
-                </li>
-              </ul>
+                    <Link locale={locale} href={`#`}>
+                      Ustawienia
+                    </Link>
+                    <ChevronDown />
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className={classNames(styles.disabled, styles.bottomContainer)}>
+          <div className={classNames(styles.disabled, styles.bottomContainer)}>
+            <ul>
+              <li>
+                <HelpCircle size={18} />
+                <Link locale={locale} href={`#`}>
+                  Pomoc
+                </Link>
+              </li>
+              <li>
+                <LogOut size={18} />
+                <Link locale={locale} href={`#`}>
+                  Wyloguj
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <Link href="/">
+          <Image
+            width={180}
+            height={40}
+            src={
+              isHome
+                ? '/assets/navbar/dark/logo.svg'
+                : '/assets/navbar/dark/logo.svg'
+            }
+            alt=""
+          />
+        </Link>
+
+        <nav className={styles.desktopNavigation}>
           <ul>
-            <li>
-              <HelpCircle size={18} />
-              <Link locale={locale} href={`#`}>
-                Pomoc
+            <li
+              className={
+                pathname.includes('/about') ? styles.selectedMenuItem : ''
+              }
+            >
+              <Link locale={locale} href={`/about`}>
+                O nas
               </Link>
             </li>
-            <li>
-              <LogOut size={18} />
-              <Link locale={locale} href={`#`}>
-                Wyloguj
+            <li
+              className={
+                pathname.includes('/product') ? styles.selectedMenuItem : ''
+              }
+            >
+              <Link locale={locale} href={`/product`}>
+                Przykładowy produkt
               </Link>
             </li>
           </ul>
-        </div>
-      </nav>
+        </nav>
 
-      <Link href="/">
         <Image
-          width={180}
+          width={80}
           height={40}
-          src={
-            isHome
-              ? '/assets/navbar/white/logo.svg'
-              : '/assets/navbar/dark/logo.svg'
-          }
+          src={'/assets/navbar/dark/additionalIcons.svg'}
           alt=""
+          style={{ cursor: 'not-allowed' }}
         />
-      </Link>
-
-      <nav className={styles.desktopNavigation}>
-        <ul>
-          <li
-            className={
-              pathname.includes('/about') ? styles.selectedMenuItem : ''
-            }
-          >
-            <Link locale={locale} href={`/about`}>
-              O nas
-            </Link>
-          </li>
-          <li
-            className={
-              pathname.includes('/product') ? styles.selectedMenuItem : ''
-            }
-          >
-            <Link locale={locale} href={`/product`}>
-              Przykładowy produkt
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Image
-        width={80}
-        height={40}
-        src={'/assets/navbar/dark/additionalIcons.svg'}
-        alt=""
-        style={{ cursor: 'not-allowed' }}
-      />
-    </div>
+      </div>
+    </>
   );
 
   return (
-    <>
-      <header data-name="dropdownRef" ref={dropdownRef}>
-        {width && width < 992 ? mobileNavBar : desktopNavBar}
-      </header>
-    </>
+    <header
+      data-name="dropdownReference"
+      ref={dropdownReference}
+      className={classNames(styles.header, isHome ? styles.home : '')}
+    >
+      {width && width < 992 ? mobileNavBar : desktopNavBar}
+    </header>
   );
 };
