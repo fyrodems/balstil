@@ -16,6 +16,7 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 import classNames from 'classnames';
+import useLocation from '@/utils/useLocation';
 
 export const Navbar: React.FC = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
@@ -23,6 +24,7 @@ export const Navbar: React.FC = () => {
   const locale = useLocale() as 'en' | 'pl' | undefined;
   const pathname = usePathname();
   const { width } = useWindowDimensions();
+  const isHome = useLocation();
 
   const handleOutsideClick = (event: MouseEvent) => {
     if (
@@ -48,14 +50,27 @@ export const Navbar: React.FC = () => {
           <Image
             width={32}
             height={40}
-            src={'/assets/navbar/burger.png'}
+            src={
+              isHome
+                ? '/assets/navbar/white/burger.svg'
+                : '/assets/navbar/dark/burger.svg'
+            }
             alt=""
             onClick={() => setDropdownOpen(true)}
           />
         </div>
 
         <Link href="/">
-          <Image width={160} height={40} src={'/assets/logo.png'} alt="" />
+          <Image
+            width={160}
+            height={40}
+            src={
+              isHome
+                ? '/assets/navbar/white/logo.svg'
+                : '/assets/navbar/dark/logo.svg'
+            }
+            alt=""
+          />
         </Link>
         <div className={styles.healper} />
       </div>
@@ -71,7 +86,12 @@ export const Navbar: React.FC = () => {
 
         <div className={styles.upperContainer}>
           <Link href="/">
-            <Image width={160} height={40} src={'/assets/logo.png'} alt="" />
+            <Image
+              width={160}
+              height={40}
+              src={'/assets/navbar/dark/logo.svg'}
+              alt=""
+            />
           </Link>
 
           <div className={styles.menuLinks}>
@@ -139,7 +159,12 @@ export const Navbar: React.FC = () => {
         <Image
           width={26}
           height={40}
-          src={'/assets/navbar/burger.png'}
+          src={
+            isHome
+              ? '/assets/navbar/white/burger.svg'
+              : '/assets/navbar/dark/burger.svg'
+          }
+          className={styles.burger}
           alt=""
           onClick={() => setDropdownOpen(true)}
         />
@@ -157,7 +182,12 @@ export const Navbar: React.FC = () => {
 
         <div className={styles.upperContainer}>
           <Link href="/">
-            <Image width={160} height={40} src={'/assets/logo.png'} alt="" />
+            <Image
+              width={160}
+              height={40}
+              src={'/assets/navbar/dark/logo.svg'}
+              alt=""
+            />
           </Link>
 
           <div className={styles.menuLinks}>
@@ -203,7 +233,16 @@ export const Navbar: React.FC = () => {
       </nav>
 
       <Link href="/">
-        <Image width={180} height={40} src={'/assets/logo.png'} alt="" />
+        <Image
+          width={180}
+          height={40}
+          src={
+            isHome
+              ? '/assets/navbar/white/logo.svg'
+              : '/assets/navbar/dark/logo.svg'
+          }
+          alt=""
+        />
       </Link>
 
       <nav className={styles.desktopNavigation}>
@@ -228,10 +267,11 @@ export const Navbar: React.FC = () => {
           </li>
         </ul>
       </nav>
+
       <Image
         width={80}
         height={40}
-        src={'/assets/navbar/menuIcons.png'}
+        src={'/assets/navbar/dark/additionalIcons.svg'}
         alt=""
         style={{ cursor: 'not-allowed' }}
       />
@@ -240,9 +280,9 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <div data-name="dropdownRef" ref={dropdownRef}>
+      <header data-name="dropdownRef" ref={dropdownRef}>
         {width && width < 992 ? mobileNavBar : desktopNavBar}
-      </div>
+      </header>
     </>
   );
 };
