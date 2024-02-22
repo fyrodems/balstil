@@ -12,7 +12,6 @@ export const Content: React.FC = () => {
 
   return (
     <main>
-      {/* <p className="text-base sm:text-xl lg:text-2xl">{t('test')}</p> */}
       <SomeFiller />
       <News />
       <ProductsSlider />
