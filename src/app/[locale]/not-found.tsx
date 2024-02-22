@@ -10,13 +10,13 @@ export default function NotFoundPage() {
     <div className={styles.notFoundPage}>
       <PageTitle
         pageTitle={'404'}
-        supportingText={t('supportingText')}
+        supportingText={t('titleText')}
         mainColor={'#1B1F2D'}
         gradient="to-right"
       />
       <div className={styles.content}>
         <h2>Ups!</h2>
-        <p>{t('text')}</p>
+        <p>{t('pageContent')}</p>
         <div className={styles.buttonWrapper}>
           <Button to="/" content={t('buttonContent')} />
         </div>

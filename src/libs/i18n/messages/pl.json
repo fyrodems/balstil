@@ -21,14 +21,14 @@
       "description": "Skontaktuj się z nami!"
     }
   },
-  
+
   "homepage": {
     "test": "test pl"
   },
 
   "404": {
-    "supportingText": "Nie znaleziono strony",
-    "text": "Wygląda na to, że zgubiłeś się w płomieniach i dymie.\nStrona, której szukasz, niestety gdzieś się ulotniła!",
+    "titleText": "Nie znaleziono strony",
+    "pageContent": "Wygląda na to, że zgubiłeś się w płomieniach i dymie.\nStrona, której szukasz, niestety gdzieś się ulotniła!",
     "buttonContent": "Wróć na stronę główną"
   }
 }
