@@ -68,7 +68,7 @@ export const Header = () => {
         <Image
           width={160}
           height={40}
-          src={"/assets/navbar/additionalIcons.png"}
+          src={"/assets/navbar/additionalIcons.svg"}
           alt=""
           style={{ cursor: "not-allowed" }}
         />
@@ -175,14 +175,77 @@ export const Header = () => {
     </>
   );
 
+  const desktopNavBar = (
+    <div className={classNames(styles.desktopNavbar)}>
+      <div className={styles.headerContainer}>
+        <Link href="/">
+          <Image
+            width={160}
+            height={40}
+            src={"/assets/navbar/gold/logo.svg"}
+            alt=""
+          />
+        </Link>
+        <input
+          type="text"
+          placeholder="Szukaj..."
+          className={styles.searchInput}
+        />
+        <Image
+          width={230}
+          height={40}
+          src={"/assets/navbar/additionalIconsDesktop.svg"}
+          alt=""
+          style={{ cursor: "not-allowed" }}
+        />
+      </div>
+      <nav className={styles.navigation}>
+        <ul>
+          <li
+            className={
+              pathname.includes("/about") ? styles.selectedMenuItem : ""
+            }
+          >
+            <Link locale={locale} href={`/about`}>
+              O NAS
+            </Link>
+          </li>
+          <li
+            className={
+              pathname.includes("/product") ? styles.selectedMenuItem : ""
+            }
+          >
+            <Link locale={locale} href={`/product`}>
+              BIOKOMINKI
+            </Link>
+          </li>
+          <li>
+            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+              PIECE WOLNOSTOJĄCE
+            </Link>
+          </li>
+          <li>
+            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+              KOMINKI ELEKTRYCZNE
+            </Link>
+          </li>
+          <li>
+            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+              AKCESORIA
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+
   return (
     <header
       data-name="dropdownReference"
       ref={dropdownReference}
       className={classNames(styles.header, isHome ? styles.home : "")}
     >
-      {mobileNavBar}
-      {/* {width && width < 992 ? mobileNavBar : desktopNavBar} */}
+      {width && width < 992 ? mobileNavBar : desktopNavBar}
     </header>
   );
 };

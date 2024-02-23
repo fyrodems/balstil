@@ -124,3 +124,65 @@
     }
   }
 }
+
+/* desktop */
+
+.header.home {
+  .headerContainer,
+  .desktopNavbar {
+    background-color: white;
+  }
+}
+
+.desktopNavbar {
+  .headerContainer {
+    border-bottom: 1px solid rgba(64, 67, 84, 0.3);
+  }
+
+  .searchInput {
+    display: flex;
+    width: 456px;
+    padding: 10px 14px;
+    align-items: flex-end;
+    gap: 14px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #eee;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    outline: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  .navigation {
+    @include limit-and-center(1050px);
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      width: 100%;
+    }
+
+    li {
+      position: relative;
+      transition: 250ms;
+      background: transparent;
+      padding: 0;
+      color: #000;
+      padding: 5px 25px;
+    }
+
+    .selectedMenuItem {
+      background: #af8e6d;
+      border-radius: 26px;
+      padding: 5px 25px;
+      color: white;
+    }
+  }
+}
