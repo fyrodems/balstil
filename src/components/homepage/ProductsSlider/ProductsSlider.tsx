@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import styles from './ProductsSlider.module.scss';
-import Image from 'next/image';
-import { Button } from '@/components/common/Button/Button';
+import React, { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styles from "./ProductsSlider.module.scss";
+import Image from "next/image";
+import { Button } from "@/components/common/Button/Button";
 
 export const ProductsSlider = () => {
   const sliderRef = useRef<Slider>(null);
@@ -68,46 +68,32 @@ export const ProductsSlider = () => {
 
   const products = [
     {
-      image: '/assets/productsSlider/product1.png',
-      title: 'Kominek',
-      description: 'Supporting line text',
-      price: '300$',
-      oldPrice: '350$',
+      image: "/assets/productsSlider/product1.png",
+      title: "Kominek",
+      description: "Supporting line text",
+      price: "300$",
+      oldPrice: "350$",
     },
     {
-      image: '/assets/productsSlider/product2.png',
-      title: 'Kominek',
-      description: 'Supporting line text',
-      price: '300$',
-      oldPrice: '350$',
+      image: "/assets/productsSlider/product2.png",
+      title: "Kominek",
+      description: "Supporting line text",
+      price: "300$",
+      oldPrice: "350$",
     },
     {
-      image: '/assets/productsSlider/product3.png',
-      title: 'Kominek',
-      description: 'Supporting line text',
-      price: '300$',
-      oldPrice: '350$',
+      image: "/assets/productsSlider/product1.png",
+      title: "Kominek",
+      description: "Supporting line text",
+      price: "300$",
+      oldPrice: "350$",
     },
     {
-      image: '/assets/productsSlider/product1.png',
-      title: 'Kominek',
-      description: 'Supporting line text',
-      price: '300$',
-      oldPrice: '350$',
-    },
-    {
-      image: '/assets/productsSlider/product2.png',
-      title: 'Kominek',
-      description: 'Supporting line text',
-      price: '300$',
-      oldPrice: '350$',
-    },
-    {
-      image: '/assets/productsSlider/product3.png',
-      title: 'Kominek',
-      description: 'Supporting line text',
-      price: '300$',
-      oldPrice: '350$',
+      image: "/assets/productsSlider/product2.png",
+      title: "Kominek",
+      description: "Supporting line text",
+      price: "300$",
+      oldPrice: "350$",
     },
   ];
 
