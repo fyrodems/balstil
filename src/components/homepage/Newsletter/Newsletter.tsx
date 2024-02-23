@@ -9,7 +9,7 @@ export const Newsletter = () => {
       <form className={styles.formWrapper}>
         <div className={styles.inputsWrapper}>
           <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">E-mail</label>
             <input type="email" placeholder="E-mail" id="email" />
           </div>
           <div>

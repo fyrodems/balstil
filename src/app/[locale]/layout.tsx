@@ -8,6 +8,7 @@ import '../tailwindGlobals.css';
 import '../styles/globals.scss';
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar/Navbar';
+import { Header } from '@/components/layout/Header/Header';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -37,7 +38,8 @@ export default async function RootLayout({ children }: Props) {
     <html lang={locale}>
       <body className={classNames(montserrat.className, 'bg-light-bg')}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Navbar />
+          <Header/>
+          {/* <Navbar /> */}
           {children}
           <Footer />
         </NextIntlClientProvider>

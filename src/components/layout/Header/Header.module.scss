@@ -1,29 +1,21 @@
 @import "@/app/styles/mixins";
 
 .header {
-  @include limit-and-center(1830px);
+  //   background-color: rgb(221, 165, 165);
 }
 
 .headerContainer {
   @include flex-custom(row, space-between, center);
   @include limit-and-center(1850px);
+  gap: 20px;
   height: 80px;
   padding: 10px 30px;
   top: 0;
   width: 100%;
-  position: absolute;
   background: transparent;
   font-weight: 500;
-
-  .healper,
-  .outerHamburger {
-    width: 32px !important;
-  }
-
-  // @include laptop {
-  //   padding-left: 130px;
-  //   padding-right: 130px;
-  // }
+  //   position: absolute;
+  background: rgb(248 247 255);
 }
 
 .outerHamburger,
@@ -32,6 +24,12 @@
 }
 
 /* mobile */
+
+.outerHamburger {
+  @include tablet {
+    width: 160px;
+  }
+}
 
 .burgerNavigation {
   padding: 0 20px;
@@ -124,48 +122,5 @@
         color: #000;
       }
     }
-  }
-}
-
-/* desktop */
-
-.header {
-  &.home {
-    @include limit-and-center(1600px);
-  }
-
-  .headerContainer.home {
-    @include limit-and-center(1650px);
-  }
-
-  > .outerHamburger {
-    @include laptop {
-      position: absolute;
-      left: 40px;
-      top: 32px;
-      z-index: 20;
-    }
-  }
-}
-
-.desktopNavigation {
-  ul {
-    @include flex-center;
-    gap: 60px;
-  }
-
-  li {
-    position: relative;
-    transition: 250ms;
-    background: transparent;
-    padding: 0;
-    color: #000;
-  }
-
-  .selectedMenuItem {
-    background: #af8e6d;
-    border-radius: 26px;
-    padding: 5px 25px;
-    color: white;
   }
 }
