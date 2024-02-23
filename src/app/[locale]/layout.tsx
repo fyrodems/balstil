@@ -1,23 +1,22 @@
-import { NextIntlClientProvider, useLocale } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { Montserrat } from 'next/font/google';
-import classNames from 'classnames';
-import 'normalize.css/normalize.css';
-import '../tailwindGlobals.css';
-import '../styles/globals.scss';
-import { Footer } from '@/components/layout/Footer';
-import { Navbar } from '@/components/layout/Navbar/Navbar';
-import { Header } from '@/components/layout/Header/Header';
+import { NextIntlClientProvider, useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { Montserrat } from "next/font/google";
+import classNames from "classnames";
+import "normalize.css/normalize.css";
+import "../tailwindGlobals.css";
+import "../styles/globals.scss";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header/Header";
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 async function generateMetadata() {
-  const t = await getTranslations('metaData.homepage');
+  const t = await getTranslations("metaData.homepage");
 
   return {
-    title: t('title'),
-    description: t('description'),
+    title: t("title"),
+    description: t("description"),
   };
 }
 
@@ -36,10 +35,9 @@ export default async function RootLayout({ children }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={classNames(montserrat.className, 'bg-light-bg')}>
+      <body className={classNames(montserrat.className, "bg-light-bg")}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header/>
-          {/* <Navbar /> */}
+          <Header />
           {children}
           <Footer />
         </NextIntlClientProvider>
