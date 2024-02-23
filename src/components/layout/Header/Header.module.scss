@@ -128,9 +128,11 @@
 /* desktop */
 
 .header.home {
-  .headerContainer,
-  .desktopNavbar {
-    background-color: white;
+  @include laptop {
+    .headerContainer,
+    .desktopNavbar {
+      background-color: white;
+    }
   }
 }
 
@@ -160,7 +162,7 @@
   }
 
   .navigation {
-    @include limit-and-center(1050px);
+    @include limit-and-center(1150px);
 
     ul {
       display: flex;
