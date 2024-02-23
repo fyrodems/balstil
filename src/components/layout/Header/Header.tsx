@@ -100,7 +100,7 @@ export const Header = () => {
               <ul>
                 <li>
                   <Link locale={locale} href={`/product`}>
-                    BIOKOMINKI
+                    OGRZEWACZE
                   </Link>
                 </li>
                 <li>
@@ -118,7 +118,16 @@ export const Header = () => {
                     href={`#`}
                     style={{ cursor: "not-allowed" }}
                   >
-                    KOMINKI ELEKTRYCZNE
+                    KOMINKI GAZOWE
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    locale={locale}
+                    href={`#`}
+                    style={{ cursor: "not-allowed" }}
+                  >
+                    KOMINKI HOLOGRAFICZNE
                   </Link>
                 </li>
                 <li>
@@ -201,7 +210,7 @@ export const Header = () => {
       </div>
       <nav className={styles.navigation}>
         <ul>
-          <li
+          {/*        <li
             className={
               pathname.includes("/about") ? styles.selectedMenuItem : ""
             }
@@ -209,14 +218,14 @@ export const Header = () => {
             <Link locale={locale} href={`/about`}>
               O NAS
             </Link>
-          </li>
+          </li> */}
           <li
             className={
               pathname.includes("/product") ? styles.selectedMenuItem : ""
             }
           >
             <Link locale={locale} href={`/product`}>
-              BIOKOMINKI
+              OGRZEWACZE
             </Link>
           </li>
           <li>
@@ -226,7 +235,12 @@ export const Header = () => {
           </li>
           <li>
             <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
-              KOMINKI ELEKTRYCZNE
+              KOMINKI GAZOWE
+            </Link>
+          </li>
+          <li>
+            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+              KOMINKI HOLOGRAFICZNE
             </Link>
           </li>
           <li>
