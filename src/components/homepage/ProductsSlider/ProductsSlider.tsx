@@ -135,10 +135,20 @@ export const ProductsSlider = () => {
       </Slider>
       <div className={styles.arrowsContainer}>
         <button className={styles.prevArrow} onClick={previous}>
-          <img src="/assets/productsSlider/arrowPrev.svg" alt="" />
+          <Image
+            width={25}
+            height={25}
+            src="/assets/productsSlider/arrowPrev.svg"
+            alt=""
+          />
         </button>
         <button className={styles.nextArrow} onClick={next}>
-          <img src="/assets/productsSlider/arrowNext.svg" alt="" />
+          <Image
+            width={25}
+            height={25}
+            src="/assets/productsSlider/arrowNext.svg"
+            alt=""
+          />
         </button>
       </div>
     </section>

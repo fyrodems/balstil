@@ -1,25 +1,12 @@
-import React, { useRef } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import styles from './BenefitsSlider.module.scss';
-import Image from 'next/image';
-import { Button } from '@/components/common/Button/Button';
+import { useRef } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styles from "./BenefitsSlider.module.scss";
+import Image from "next/image";
 
 export const BenefitsSlider = () => {
   const sliderRef = useRef<Slider>(null);
-
-  /*   const next = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickNext();
-    }
-  };
-
-  const previous = () => {
-    if (sliderRef.current) {
-      sliderRef.current.slickPrev();
-    }
-  }; */
 
   const settings = {
     dots: true,
@@ -38,19 +25,19 @@ export const BenefitsSlider = () => {
 
   const products = [
     {
-      image: '/assets/products/cylinde/slider.png',
+      image: "/assets/products/cylinde/slider.png",
     },
     {
-      image: '/assets/products/cylinde/slider.png',
+      image: "/assets/products/cylinde/slider.png",
     },
     {
-      image: '/assets/products/cylinde/slider.png',
+      image: "/assets/products/cylinde/slider.png",
     },
     {
-      image: '/assets/products/cylinde/slider.png',
+      image: "/assets/products/cylinde/slider.png",
     },
     {
-      image: '/assets/products/cylinde/slider.png',
+      image: "/assets/products/cylinde/slider.png",
     },
   ];
 
@@ -72,14 +59,6 @@ export const BenefitsSlider = () => {
           );
         })}
       </Slider>
-      {/*  <div className={styles.arrowsContainer}>
-        <button className={styles.prevArrow} onClick={previous}>
-          <img src="/assets/productsSlider/arrowPrev.svg" alt="" />
-        </button>
-        <button className={styles.nextArrow} onClick={next}>
-          <img src="/assets/productsSlider/arrowNext.svg" alt="" />
-        </button>
-      </div> */}
     </section>
   );
 };
