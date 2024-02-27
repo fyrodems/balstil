@@ -1,9 +1,5 @@
-@use "./themes.scss" as themes;
-@use "./link.scss" as link;
-
 @mixin dropdown {
-  @include link.link;
-  color: themes.$white;
+  color: #fff;
 
   &::before {
     content: "‹";

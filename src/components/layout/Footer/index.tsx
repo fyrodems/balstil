@@ -7,5 +7,5 @@ export const Footer = () => {
   // const t = useTranslations("layout.footer");
   const locale = useLocale();
 
-  return <footer className={styles.footerWrapper}></footer>;
+  return <footer className={styles.footerWrapper}>bleble</footer>;
 };

@@ -1,10 +1,10 @@
-@use '@/app/styles/themes.scss' as themes;
-@import '@/app/styles/mixins';
+@import "@/app/styles/mixins";
+@import "@/app/styles/themes";
 
 .footerWrapper {
   position: relative;
-  background-color: themes.$footerBg;
-  color: themes.$white;
+  background-color: $footerBg;
+  color: $white;
   width: 100%;
   margin-top: auto;
   display: flex;
@@ -96,7 +96,7 @@
   .sitemapColumn {
     .sitemapTitle {
       font-weight: 700;
-      color: themes.$mainColor;
+      color: $mainColor;
     }
     div {
       margin-bottom: 24px;
