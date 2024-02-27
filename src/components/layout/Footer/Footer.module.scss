@@ -1,5 +1,5 @@
-@import "@/app/styles/mixins";
-@import "@/app/styles/themes";
+@import '@/app/styles/mixins';
+@import '@/app/styles/themes';
 
 .footerWrapper {
   position: relative;
@@ -13,7 +13,8 @@
   flex-wrap: wrap;
   padding: 30px 30px 10px 30px;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 14px;
+
   @include tablet {
     padding: 60px 80px 40px 80px;
 
@@ -22,23 +23,11 @@
       width: 100%;
     }
   }
-}
 
-.logoWrapper {
-  display: flex;
-  gap: 10px;
-  align-items: flex-end;
-
-  .logotype {
-    margin-bottom: 2px;
-  }
-}
-
-.mainContent {
-  @include tablet {
-    display: grid;
-    grid-template-columns: 20% 5% 50%;
-    justify-content: space-between;
+  h2,
+  h3 {
+    font-weight: 700;
+    color: #af8e6d;
   }
 }
 
@@ -50,48 +39,37 @@
 }
 
 .contactInfoWrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
   margin-top: 40px;
-  // border-right: 1px solid red;
 
-  @include tablet {
-    grid-template-columns: 1fr;
+  .container {
+    margin: 36px 0;
+  }
+
+  h3 {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    font-size: 14px;
   }
 
   .hotline {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+    margin-top: 10px;
   }
 
-  .contactInfo {
+  .socialIcons {
     display: flex;
-    flex-direction: column;
-    gap: 1em;
-    max-width: 200px;
-
-    div {
-      display: flex;
-      gap: 15px;
-    }
+    gap: 30px;
+    margin-top: 20px;
   }
 }
 
-.sitemap_wrapper {
+.followUs {
+}
+
+.sitemapWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 60px 0;
-  // padding-left: 100px;
-
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   height: 200px;
-  //   width: 10px;
-  //   background-color: red;
-  // }
 
   .sitemapColumn {
     .sitemapTitle {
@@ -109,9 +87,9 @@
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  // justify-content: space-between;
   text-align: center;
   gap: 36px;
+  padding-top: 26px;
 
   @include tablet {
     flex-direction: row;
@@ -120,7 +98,9 @@
 
   div {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 14px;
   }
 }
