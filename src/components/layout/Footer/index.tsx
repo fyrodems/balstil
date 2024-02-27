@@ -11,10 +11,14 @@ export const Footer = () => {
 
   return (
     <footer className={styles.footerWrapper}>
-      <ContactInfo />
-      <Sitemap />
+      <div className={styles.content}>
+        <ContactInfo />
+        <div className={styles.decoration}></div>
+        <Sitemap />
+      </div>
+
       <div className={styles.bottomWrapper}>
-        <div>
+        <div className={styles.links}>
           <span>Polityka prywatności</span>
           <span>Nota prawna</span>
           <span>Regulamin</span>

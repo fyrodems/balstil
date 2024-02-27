@@ -1,10 +1,11 @@
-import React from 'react';
+import styles from './Footer.module.scss';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import useWindowDimensions from '@/utils/useWindowDimensions';
 
 const sitemapItems = [
   {
@@ -33,10 +34,8 @@ const sitemapItems = [
       'Inspiracje',
       'Materiały do pobrania',
       'Zostań częścią społeczności BÅLSTIL',
-      'Blog',
       'Serwis',
       'Nota Prawna',
-      'Usługi CNC',
     ],
   },
   {
@@ -64,6 +63,21 @@ const mobileSitemap = (
   </Accordion>
 );
 
+const desktopSitemap = (
+  <div className={styles.desktopSitemap}>
+    {sitemapItems.map((item, key) => (
+      <div key={item.value} className={styles.sitemapColumn}>
+        <h3>{item.value}</h3>
+        {item.contents.map((content, index) => (
+          <span key={index}>{content}</span>
+        ))}
+      </div>
+    ))}
+  </div>
+);
+
 export const Sitemap = () => {
-  return mobileSitemap;
+  const { width } = useWindowDimensions();
+
+  return width && width < 992 ? mobileSitemap : desktopSitemap;
 };
