@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import {
   ChevronDown,
   Inbox,
@@ -11,17 +11,18 @@ import {
   HelpCircle,
   LogOut,
   ChevronLeft,
-} from "lucide-react";
-import classNames from "classnames";
-import styles from "./Header.module.scss";
-import { Link } from "@/navigation";
-import useWindowDimensions from "@/utils/useWindowDimensions";
-import useLocation from "@/utils/useLocation";
+} from 'lucide-react';
+import classNames from 'classnames';
+import styles from './Header.module.scss';
+import { Link } from '@/navigation';
+import useWindowDimensions from '@/utils/useWindowDimensions';
+import useLocation from '@/utils/useLocation';
+import { LanguageSelector } from '../LanguageSelector';
 
 export const Header = () => {
   const [isDropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const dropdownReference = useRef<HTMLDivElement | null>(null);
-  const locale = useLocale() as "en" | "pl" | undefined;
+  const locale = useLocale() as 'en' | 'pl' | undefined;
   const pathname = usePathname();
   const { width } = useWindowDimensions();
   const isHome = useLocation();
@@ -36,10 +37,10 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("click", handleOutsideClick);
+    window.addEventListener('click', handleOutsideClick);
 
     return () => {
-      window.removeEventListener("click", handleOutsideClick);
+      window.removeEventListener('click', handleOutsideClick);
     };
   }, []);
 
@@ -50,7 +51,7 @@ export const Header = () => {
           <Image
             width={32}
             height={40}
-            src={"/assets/navbar/dark/burger.svg"}
+            src={'/assets/navbar/dark/burger.svg'}
             alt="hamburger"
             onClick={() => setDropdownOpen(true)}
           />
@@ -60,24 +61,23 @@ export const Header = () => {
           <Image
             width={160}
             height={40}
-            src={"/assets/navbar/gold/logo.svg"}
+            src={'/assets/navbar/gold/logo.svg'}
             alt=""
           />
         </Link>
-
         <Image
           width={160}
           height={40}
-          src={"/assets/navbar/additionalIcons.svg"}
+          src={'/assets/navbar/additionalIcons.svg'}
           alt=""
-          style={{ cursor: "not-allowed" }}
+          style={{ cursor: 'not-allowed' }}
         />
       </div>
 
       <nav
         className={classNames(
           styles.burgerNavigation,
-          isDropdownOpen ? styles.open : ""
+          isDropdownOpen ? styles.open : ''
         )}
       >
         <div className={styles.innerHamburger}>
@@ -89,7 +89,7 @@ export const Header = () => {
             <Image
               width={160}
               height={40}
-              src={"/assets/navbar/dark/logo.svg"}
+              src={'/assets/navbar/dark/logo.svg'}
               alt=""
             />
           </Link>
@@ -107,7 +107,7 @@ export const Header = () => {
                   <Link
                     locale={locale}
                     href={`#`}
-                    style={{ cursor: "not-allowed" }}
+                    style={{ cursor: 'not-allowed' }}
                   >
                     PIECE WOLNOSTOJĄCE
                   </Link>
@@ -116,7 +116,7 @@ export const Header = () => {
                   <Link
                     locale={locale}
                     href={`#`}
-                    style={{ cursor: "not-allowed" }}
+                    style={{ cursor: 'not-allowed' }}
                   >
                     KOMINKI GAZOWE
                   </Link>
@@ -125,7 +125,7 @@ export const Header = () => {
                   <Link
                     locale={locale}
                     href={`#`}
-                    style={{ cursor: "not-allowed" }}
+                    style={{ cursor: 'not-allowed' }}
                   >
                     KOMINKI HOLOGRAFICZNE
                   </Link>
@@ -134,7 +134,7 @@ export const Header = () => {
                   <Link
                     locale={locale}
                     href={`#`}
-                    style={{ cursor: "not-allowed" }}
+                    style={{ cursor: 'not-allowed' }}
                   >
                     AKCESORIA
                   </Link>
@@ -191,7 +191,7 @@ export const Header = () => {
           <Image
             width={160}
             height={40}
-            src={"/assets/navbar/gold/logo.svg"}
+            src={'/assets/navbar/gold/logo.svg'}
             alt=""
           />
         </Link>
@@ -200,13 +200,16 @@ export const Header = () => {
           placeholder="Szukaj..."
           className={styles.searchInput}
         />
-        <Image
-          width={230}
-          height={40}
-          src={"/assets/navbar/additionalIconsDesktop.svg"}
-          alt=""
-          style={{ cursor: "not-allowed" }}
-        />
+        <div className={styles.additionalFunctions} >
+          <LanguageSelector />
+          <Image
+            width={100}
+            height={40}
+            src={'/assets/navbar/additionalIconsDesktop.svg'}
+            alt=""
+            style={{ cursor: 'not-allowed' }}
+          />
+        </div>
       </div>
       <nav className={styles.navigation}>
         <ul>
@@ -221,7 +224,7 @@ export const Header = () => {
           </li> */}
           <li
             className={
-              pathname.includes("/product") ? styles.selectedMenuItem : ""
+              pathname.includes('/product') ? styles.selectedMenuItem : ''
             }
           >
             <Link locale={locale} href={`/product`}>
@@ -229,22 +232,22 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+            <Link locale={locale} href={`#`} style={{ cursor: 'not-allowed' }}>
               PIECE WOLNOSTOJĄCE
             </Link>
           </li>
           <li>
-            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+            <Link locale={locale} href={`#`} style={{ cursor: 'not-allowed' }}>
               KOMINKI GAZOWE
             </Link>
           </li>
           <li>
-            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+            <Link locale={locale} href={`#`} style={{ cursor: 'not-allowed' }}>
               KOMINKI HOLOGRAFICZNE
             </Link>
           </li>
           <li>
-            <Link locale={locale} href={`#`} style={{ cursor: "not-allowed" }}>
+            <Link locale={locale} href={`#`} style={{ cursor: 'not-allowed' }}>
               AKCESORIA
             </Link>
           </li>
@@ -257,7 +260,7 @@ export const Header = () => {
     <header
       data-name="dropdownReference"
       ref={dropdownReference}
-      className={classNames(styles.header, isHome ? styles.home : "")}
+      className={classNames(styles.header, isHome ? styles.home : '')}
     >
       {width && width < 992 ? mobileNavBar : desktopNavBar}
     </header>
