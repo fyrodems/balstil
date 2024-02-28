@@ -1,60 +1,66 @@
-'use client';
-
-import { useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
 import { useLocale } from 'next-intl';
-import styles from './languageSelector.module.scss';
 import { Link, usePathname } from '@/navigation';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import styles from './languageSelector.module.scss';
+import Image from 'next/image';
 
-export const LanguageSelector = () => {
+interface LangWithFlagProps {
+  locale: 'en' | 'pl' | undefined;
+  language: string;
+  flagCode?: string;
+}
+
+export const LanguageSelector: React.FC = () => {
   const locale = useLocale();
-  const [show, setShow] = useState(false);
   const pathname = usePathname();
 
-  const showDropdown = () => {
-    setShow(true);
-  };
+  const LinkWithFlag: React.FC<LangWithFlagProps> = ({
+    locale,
+    language,
+    flagCode,
+  }) => (
+    <Link href={pathname} locale={locale}>
+      <Image
+        src={`https://hatscripts.github.io/circle-flags/flags/${
+          flagCode || locale
+        }.svg`}
+        alt={'flaga'}
+        height={25}
+        width={25}
+      />
+      {language}
+    </Link>
+  );
 
-  const hideDropdown = () => {
-    setShow(false);
-  };
-
-  const toggleDropdown = () => {
-    setShow(!show);
-  };
+  const GenerateLanguageSelectorTrigger: React.FC<{ locale: string }> = ({
+    locale,
+  }) => (
+    <div className={styles.languageSelectorTrigger}>
+      <Image
+        src={`https://hatscripts.github.io/circle-flags/flags/${
+          locale === 'pl' ? 'pl' : 'gb'
+        }.svg`}
+        alt={'flaga'}
+        height={25}
+        width={25}
+      />
+      {locale === 'pl' ? 'Polski' : 'English'}
+    </div>
+  );
 
   return (
-    <Dropdown
-      show={show}
-      onMouseEnter={showDropdown}
-      onMouseLeave={hideDropdown}
-      onClick={toggleDropdown}
-      className={styles.dropdown}
-    >
-      <Dropdown.Toggle
-        className={styles.dropdown__toggle}
-        id="languageDropdown"
-      >
-        {locale.toUpperCase()}
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item
-          as={Link}
-          href={`${pathname}`}
-          locale="pl"
-          eventKey={'pl'}
-        >
-          PL
-        </Dropdown.Item>
-        <Dropdown.Item
-          as={Link}
-          href={`${pathname}`}
-          locale="en"
-          eventKey={'en'}
-        >
-          EN
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+    <Popover>
+      <PopoverTrigger>
+        <GenerateLanguageSelectorTrigger locale={locale} />
+      </PopoverTrigger>
+      <PopoverContent className={styles.LanguageSelectorContainer}>
+        <LinkWithFlag locale="pl" language="Polski" />
+        <LinkWithFlag locale="en" language="English" flagCode="gb" />
+      </PopoverContent>
+    </Popover>
   );
 };

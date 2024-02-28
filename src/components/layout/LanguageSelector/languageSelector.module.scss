@@ -1,53 +1,17 @@
-@use '@/app/styles/dropdown.scss' as dropdown;
-@use '@/app/styles/themes.scss' as themes;
+.languageSelectorTrigger {
+  display: flex;
+  gap: 10px;
+}
 
-.dropdown {
-  @include dropdown.dropdown;
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  // transform: translateY(-50%);
-  right: 50px;
-  color: black;
-  // right: -35px;
-  // top: 50%;
+.LanguageSelectorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
 
-  // @include themes.medium {
-  //   top: 28px;
-  //   right: -15px;
-  // }
-
-  // @include themes.small {
-  //   top: 25px;
-  // }
-
-  // @include themes.superSmall {
-  //   top: 23px;
-  // }
-
-  &::after {
-    transform: translateY(-4px);
-  }
-
-  &:hover::after {
-    transform: translateY(-4px);
-  }
-
-  &:hover::before {
-    transform: rotate(90deg) translateY(-22px);
-  }
-
-  &__toggle {
-    background-color: transparent;
-    border: none;
-    &:hover {
-      background-color: transparent;
-    }
-    &:focus-visible {
-      background-color: transparent;
-    }
-    &:active {
-      background-color: transparent;
-    }
+  a {
+    display: flex;
+    gap: 10px;
+    width: fit-content;
   }
 }
